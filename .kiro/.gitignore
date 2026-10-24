@@ -1,0 +1,7 @@
+# Prevent accidental commits of local Kiro runtime data.
+cache/
+logs/
+sessions/
+*.db
+*.sqlite
+settings/*.local.json
