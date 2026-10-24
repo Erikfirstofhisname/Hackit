@@ -1,0 +1,292 @@
+{
+  "generated_by": "generate_seed.py (deterministic, synthetic)",
+  "people": [
+    {
+      "id": "p4",
+      "name": "Omar",
+      "campus": "Suffolk",
+      "interest": "volunteering",
+      "role": "founder",
+      "tagline": "Building something and looking for a team",
+      "looking_for": "a technical co-founder",
+      "neighborhood": "Roxbury",
+      "match_reason": "Shares your interest in volunteering; Suffolk is one campus over.",
+      "opportunity_score": 100.0
+    },
+    {
+      "id": "p2",
+      "name": "Nia",
+      "campus": "Suffolk",
+      "interest": "entrepreneurship",
+      "role": "organizer",
+      "tagline": "Runs events, wants more people to show up",
+      "looking_for": "speakers",
+      "neighborhood": "Dorchester",
+      "match_reason": "Shares your interest in entrepreneurship; Suffolk is one campus over.",
+      "opportunity_score": 81.3
+    },
+    {
+      "id": "p8",
+      "name": "Diego",
+      "campus": "UMass Boston",
+      "interest": "music",
+      "role": "founder",
+      "tagline": "Building something and looking for a team",
+      "looking_for": "a technical co-founder",
+      "neighborhood": "Dorchester",
+      "match_reason": "Shares your interest in music; UMass Boston is one campus over.",
+      "opportunity_score": 81.3
+    },
+    {
+      "id": "p1",
+      "name": "Mei",
+      "campus": "Other Boston-area college",
+      "interest": "fashion",
+      "role": "beginner",
+      "tagline": "New to this \u2014 wants a way in, not a wall",
+      "looking_for": "a mentor",
+      "neighborhood": "Fenway",
+      "match_reason": "Shares your interest in fashion; Other Boston-area college is one campus over.",
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "p3",
+      "name": "Omar",
+      "campus": "Emerson",
+      "interest": "entrepreneurship",
+      "role": "founder",
+      "tagline": "Building something and looking for a team",
+      "looking_for": "a technical co-founder",
+      "neighborhood": "Fenway",
+      "match_reason": "Shares your interest in entrepreneurship; Emerson is one campus over.",
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "p9",
+      "name": "Rafael",
+      "campus": "Other Boston-area college",
+      "interest": "music",
+      "role": "organizer",
+      "tagline": "Runs events, wants more people to show up",
+      "looking_for": "students from other campuses",
+      "neighborhood": "Fenway",
+      "match_reason": "Shares your interest in music; Other Boston-area college is one campus over.",
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "p5",
+      "name": "Diego",
+      "campus": "Suffolk",
+      "interest": "design",
+      "role": "organizer",
+      "tagline": "Runs events, wants more people to show up",
+      "looking_for": "a venue partner",
+      "neighborhood": "Jamaica Plain",
+      "match_reason": "Shares your interest in design; Suffolk is one campus over.",
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "p6",
+      "name": "Rafael",
+      "campus": "Northeastern",
+      "interest": "design",
+      "role": "designer",
+      "tagline": "Looking for collaborators on a project",
+      "looking_for": "a brand to work with",
+      "neighborhood": "Jamaica Plain",
+      "match_reason": "Shares your interest in design; Northeastern is one campus over.",
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "p7",
+      "name": "Luca",
+      "campus": "Boston University",
+      "interest": "entrepreneurship",
+      "role": "designer",
+      "tagline": "Looking for collaborators on a project",
+      "looking_for": "a creative crew",
+      "neighborhood": "Jamaica Plain",
+      "match_reason": "Shares your interest in entrepreneurship; Boston University is one campus over.",
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "p10",
+      "name": "Tariq",
+      "campus": "Emerson",
+      "interest": "writing",
+      "role": "beginner",
+      "tagline": "New to this \u2014 wants a way in, not a wall",
+      "looking_for": "a beginner-friendly workshop",
+      "neighborhood": "Jamaica Plain",
+      "match_reason": "Shares your interest in writing; Emerson is one campus over.",
+      "opportunity_score": 60.5
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "o1",
+      "title": "First Friday Founders Mixer",
+      "host": "Dorchester Art Project",
+      "type": "Workshop",
+      "neighborhood": "Back Bay",
+      "date": "Fri, Nov 7 at 6:30 PM",
+      "cost": "Free",
+      "opportunity_score": 94.5
+    },
+    {
+      "id": "o2",
+      "title": "Intro to Design \u2014 No Experience Needed",
+      "host": "Roxbury Innovation Center",
+      "type": "Co-working",
+      "neighborhood": "Dorchester",
+      "date": "Thu, Nov 13 at 7:00 PM",
+      "cost": "$8.00",
+      "opportunity_score": 81.3
+    },
+    {
+      "id": "o3",
+      "title": "Cross-Campus Build Night",
+      "host": "District Hall",
+      "type": "Local market",
+      "neighborhood": "Fenway",
+      "date": "Fri, Nov 7 at 6:30 PM",
+      "cost": "Free",
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "o5",
+      "title": "Photo Walk + Portfolio Review",
+      "host": "Dudley Cafe",
+      "type": "Showcase",
+      "neighborhood": "Fenway",
+      "date": "Wed, Nov 19 at 5:30 PM",
+      "cost": "Free",
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "o4",
+      "title": "Local Makers Market",
+      "host": "CIC Boston",
+      "type": "Showcase",
+      "neighborhood": "Jamaica Plain",
+      "date": "Thu, Nov 13 at 7:00 PM",
+      "cost": "Free",
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "o7",
+      "title": "Creative Collab Jam",
+      "host": "District Hall",
+      "type": "Local market",
+      "neighborhood": "Downtown",
+      "date": "Fri, Nov 14 at 6:00 PM",
+      "cost": "Free",
+      "opportunity_score": 53.5
+    },
+    {
+      "id": "o6",
+      "title": "Beginner's Coding Circle",
+      "host": "District Hall",
+      "type": "Co-working",
+      "neighborhood": "Cambridge",
+      "date": "Thu, Nov 13 at 7:00 PM",
+      "cost": "$5.00",
+      "opportunity_score": 0.0
+    },
+    {
+      "id": "o8",
+      "title": "Small Business Story Night",
+      "host": "The Record Co.",
+      "type": "Showcase",
+      "neighborhood": "Cambridge",
+      "date": "Fri, Nov 7 at 6:30 PM",
+      "cost": "$5.00",
+      "opportunity_score": 0.0
+    }
+  ],
+  "communities": [
+    {
+      "id": "c4",
+      "name": "Design Collective 617",
+      "interest": "music",
+      "campuses": [
+        "Northeastern",
+        "Other Boston-area college",
+        "Emerson"
+      ],
+      "neighborhood": "Roxbury",
+      "members": 118,
+      "opportunity_score": 100.0
+    },
+    {
+      "id": "c1",
+      "name": "Boston Beginners in Tech",
+      "interest": "entrepreneurship",
+      "campuses": [
+        "Other Boston-area college",
+        "Boston University"
+      ],
+      "neighborhood": "Fenway",
+      "members": 183,
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "c3",
+      "name": "First-Gen Founders BOS",
+      "interest": "technology",
+      "campuses": [
+        "Suffolk",
+        "UMass Boston"
+      ],
+      "neighborhood": "Fenway",
+      "members": 144,
+      "opportunity_score": 68.4
+    },
+    {
+      "id": "c2",
+      "name": "Cross-Campus Creatives",
+      "interest": "writing",
+      "campuses": [
+        "Other Boston-area college",
+        "Emerson",
+        "Boston University"
+      ],
+      "neighborhood": "Jamaica Plain",
+      "members": 23,
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "c6",
+      "name": "Students for Local Business",
+      "interest": "photography",
+      "campuses": [
+        "Emerson",
+        "Suffolk"
+      ],
+      "neighborhood": "Jamaica Plain",
+      "members": 89,
+      "opportunity_score": 60.5
+    },
+    {
+      "id": "c5",
+      "name": "Makers of Dorchester",
+      "interest": "writing",
+      "campuses": [
+        "Northeastern",
+        "Emerson"
+      ],
+      "neighborhood": "Cambridge",
+      "members": 120,
+      "opportunity_score": 0.0
+    }
+  ],
+  "neighborhood_scores": {
+    "Roxbury": 100.0,
+    "Back Bay": 94.5,
+    "Dorchester": 81.3,
+    "Fenway": 68.4,
+    "Jamaica Plain": 60.5,
+    "Downtown": 53.5,
+    "Cambridge": 0.0
+  }
+}

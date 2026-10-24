@@ -13,9 +13,9 @@ const body = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Loka — Student event fit",
+  title: "LOKA — bridge Boston's campuses",
   description:
-    "Train and rank Boston student creative-event models with GMM tiers.",
+    "LOKA connects students to the right people, communities, and opportunities across Boston's campuses — ranked by the LOKA ML model.",
 };
 
 export default function RootLayout({
