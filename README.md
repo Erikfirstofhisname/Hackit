@@ -2,7 +2,7 @@
 
 React + Next.js + Tailwind frontend with a FastAPI backend that trains/tests student–event models, builds **GMM tiers**, and returns **top 10** rankings (overall + per model).
 
-## Run on localhost:10000
+## Run on localhost:10001
 
 ```bash
 # one-time
@@ -18,7 +18,7 @@ uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
 cd frontend && npm run dev
 ```
 
-Open **http://localhost:10000**
+Open **http://localhost:10001**
 
 Or: `bash scripts/dev.sh`
 

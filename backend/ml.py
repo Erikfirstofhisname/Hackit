@@ -249,6 +249,98 @@ def _json_safe(obj: Any) -> Any:
     return obj
 
 
+def _assert_tier_score_monotonic(scores: np.ndarray, tier_rank: np.ndarray) -> None:
+    """Fail loudly if a lower tier contains a higher score than a better tier."""
+    scores = np.asarray(scores, dtype=float)
+    tier_rank = np.asarray(tier_rank, dtype=int)
+    tiers = sorted(int(t) for t in np.unique(tier_rank))
+    for better, worse in zip(tiers, tiers[1:]):
+        a = scores[tier_rank == better]
+        b = scores[tier_rank == worse]
+        if a.size == 0 or b.size == 0:
+            continue
+        if float(np.min(a)) + 1e-12 < float(np.max(b)):
+            raise AssertionError(
+                f"Tier score order violated: min(tier {better})={np.min(a):.6f} "
+                f"< max(tier {worse})={np.max(b):.6f}"
+            )
+
+
+def _gmm_informed_tier_ranks(
+    scores: np.ndarray,
+    gmm_features: np.ndarray,
+    n_tiers: int,
+    random_state: int = RANDOM_STATE,
+) -> np.ndarray:
+    """Assign tier_rank 1..n_tiers using GMM structure with score cutpoints.
+
+    1. Fit GMM on the model-score feature matrix.
+    2. Order components by each component's mean ensemble_score (high → Tier A).
+    3. Place cutpoints at midpoints between consecutive component means.
+    4. Assign every row by ensemble_score vs those cutpoints.
+
+    Step 4 makes tiers score-threshold based, so:
+      min(Tier A) >= max(Tier B) >= max(Tier C)
+    while the cut locations still come from the GMM.
+    """
+    scores = np.asarray(scores, dtype=float)
+    n = len(scores)
+    n_tiers = int(max(2, min(n_tiers, n)))
+
+    feats = np.nan_to_num(np.asarray(gmm_features, dtype=float), nan=0.0)
+    if feats.ndim == 1:
+        feats = feats.reshape(-1, 1)
+
+    gmm = GaussianMixture(
+        n_components=n_tiers,
+        random_state=random_state,
+        covariance_type="full",
+    )
+    labels = gmm.fit_predict(feats)
+
+    # Mean ensemble score of points hard-assigned to each GMM component
+    comp_means: dict[int, float] = {}
+    for k in range(n_tiers):
+        mask = labels == k
+        if not np.any(mask):
+            # empty component — fall back to Gaussian mean on first feature dim
+            comp_means[k] = float(gmm.means_[k].ravel()[0])
+        else:
+            comp_means[k] = float(np.mean(scores[mask]))
+
+    # Best component first (highest mean score)
+    order = sorted(comp_means, key=comp_means.get, reverse=True)
+    ordered_means = [comp_means[k] for k in order]
+
+    # Midpoints between consecutive means (descending score axis)
+    cuts: list[float] = []
+    for i in range(len(ordered_means) - 1):
+        cuts.append(0.5 * (ordered_means[i] + ordered_means[i + 1]))
+
+    # Collapsed / duplicate means → equal-count bands on sorted scores
+    collapsed = (not cuts) or (
+        len({round(c, 10) for c in cuts}) < len(cuts)
+    ) or any(
+        abs(ordered_means[i] - ordered_means[i + 1]) < 1e-12
+        for i in range(len(ordered_means) - 1)
+    )
+    if collapsed:
+        order_idx = np.argsort(-scores, kind="mergesort")
+        tier_rank = np.empty(n, dtype=int)
+        edges = np.linspace(0, n, n_tiers + 1, dtype=int)
+        for t in range(n_tiers):
+            tier_rank[order_idx[edges[t] : edges[t + 1]]] = t + 1
+        return tier_rank
+
+    # score >= cuts[0] → tier 1; elif >= cuts[1] → tier 2; else last tier
+    tier_rank = np.full(n, n_tiers, dtype=int)
+    for t, cut in enumerate(cuts):
+        in_band = scores >= cut
+        tier_rank[in_band] = np.minimum(tier_rank[in_band], t + 1)
+
+    return tier_rank
+
+
 def _score_vector(
     task: str, y_true: np.ndarray, pred: np.ndarray, proba: np.ndarray | None
 ) -> np.ndarray:
@@ -394,28 +486,25 @@ def run_pipeline(
     # Ensemble score = mean of available model scores
     df["ensemble_score"] = df[score_cols].mean(axis=1)
 
-    # GMM tiers on ensemble (+ individual scores if enough dims)
+    # GMM informs where tiers split; score cutpoints keep tiers monotonic:
+    #   min(Tier A) >= max(Tier B) >= max(Tier C)
     gmm_features = df[score_cols].to_numpy()
-    if gmm_features.shape[1] == 1:
-        gmm_features = np.column_stack([gmm_features, df["ensemble_score"]])
-    gmm_features = np.nan_to_num(gmm_features, nan=0.0)
-
-    n_components = min(n_tiers, max(2, len(df) // 20))
-    gmm = GaussianMixture(
-        n_components=n_components, random_state=RANDOM_STATE, covariance_type="full"
+    n_components = min(n_tiers, max(2, min(n_tiers, len(df))))
+    df["tier_rank"] = _gmm_informed_tier_ranks(
+        df["ensemble_score"].to_numpy(dtype=float),
+        gmm_features,
+        n_components,
     )
-    labels = gmm.fit_predict(gmm_features)
-    # Order clusters by mean ensemble score (high → Tier A)
-    cluster_means = {
-        k: float(df.loc[labels == k, "ensemble_score"].mean()) for k in range(n_components)
-    }
-    order = sorted(cluster_means, key=cluster_means.get, reverse=True)
-    tier_map = {cluster: TIER_NAMES[i] if i < len(TIER_NAMES) else f"Tier {i+1}" for i, cluster in enumerate(order)}
-    df["tier"] = [tier_map[int(c)] for c in labels]
-    df["tier_rank"] = [order.index(int(c)) + 1 for c in labels]
+    df["tier"] = df["tier_rank"].map(
+        lambda r: TIER_NAMES[r - 1] if r - 1 < len(TIER_NAMES) else f"Tier {r}"
+    )
+    _assert_tier_score_monotonic(
+        df["ensemble_score"].to_numpy(), df["tier_rank"].to_numpy()
+    )
 
+    # Rank list by score only (higher score = better rank)
     overall = (
-        df.sort_values(["tier_rank", "ensemble_score"], ascending=[True, False])
+        df.sort_values(["ensemble_score", "tier_rank"], ascending=[False, True])
         .head(top_n)[
             [
                 "record_id",
@@ -435,14 +524,16 @@ def run_pipeline(
     overall.insert(0, "rank", range(1, len(overall) + 1))
 
     tier_summary = []
-    for i, cluster in enumerate(order):
-        mask = labels == cluster
+    for r in range(1, int(df["tier_rank"].max()) + 1):
+        mask = df["tier_rank"] == r
         tier_summary.append(
             {
-                "tier": tier_map[cluster],
-                "tier_rank": i + 1,
+                "tier": TIER_NAMES[r - 1] if r - 1 < len(TIER_NAMES) else f"Tier {r}",
+                "tier_rank": r,
                 "count": int(mask.sum()),
-                "mean_ensemble_score": float(df.loc[mask, "ensemble_score"].mean()),
+                "mean_ensemble_score": float(df.loc[mask, "ensemble_score"].mean())
+                if mask.any()
+                else 0.0,
             }
         )
 

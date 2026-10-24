@@ -3,14 +3,19 @@
 :root {
   --ink: #1a1a18;
   --fog: #efe9dc;
-  --leaf: #8a9a6e;
-  --leaf-deep: #6f7f56;
+  --leaf: #6f7f56;
+  --leaf-deep: #556343;
   --sand: #f7f1e6;
   --cream: #f5f0e6;
-  --clay: #c45c26;
+  --clay: #b04e1f;
   --line: #d4caba;
   --background: #f5f0e6;
   --foreground: var(--ink);
+  --tier-a: #556343;
+  --tier-b: #8a7348;
+  --tier-c: #8a5a45;
+  --radius: 0.65rem;
+  --shadow-soft: 0 10px 30px rgba(26, 26, 24, 0.06);
 }
 
 @theme inline {
@@ -21,25 +26,36 @@
   --color-leaf: var(--leaf);
   --color-leaf-deep: var(--leaf-deep);
   --color-sand: var(--sand);
+  --color-cream: var(--cream);
   --color-clay: var(--clay);
   --color-line: var(--line);
+  --color-tier-a: var(--tier-a);
+  --color-tier-b: var(--tier-b);
+  --color-tier-c: var(--tier-c);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
 }
 
 body {
-  background:
-    radial-gradient(ellipse 70% 45% at 8% 0%, #ebe4d4 0%, transparent 55%),
-    radial-gradient(ellipse 55% 40% at 100% 5%, #e8efe6 0%, transparent 50%),
-    var(--cream);
+  background: var(--cream);
   color: var(--ink);
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--leaf-deep);
+  outline-offset: 2px;
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -57,10 +73,52 @@ body {
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .animate-rise {
-  animation: rise 0.55s ease-out both;
+  animation: rise 0.45s ease-out both;
 }
 
 .animate-pulse-soft {
   animation: pulse-soft 1.4s ease-in-out infinite;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #ebe4d4 0%, #f7f1e6 50%, #ebe4d4 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: var(--radius);
+}
+
+.tier-badge-a {
+  background: color-mix(in oklab, var(--tier-a) 16%, white);
+  color: var(--tier-a);
+  border: 1px solid color-mix(in oklab, var(--tier-a) 35%, white);
+}
+
+.tier-badge-b {
+  background: color-mix(in oklab, var(--tier-b) 16%, white);
+  color: var(--tier-b);
+  border: 1px solid color-mix(in oklab, var(--tier-b) 35%, white);
+}
+
+.tier-badge-c {
+  background: color-mix(in oklab, var(--tier-c) 16%, white);
+  color: var(--tier-c);
+  border: 1px solid color-mix(in oklab, var(--tier-c) 35%, white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-pulse-soft,
+  .skeleton {
+    animation: none !important;
+  }
 }
