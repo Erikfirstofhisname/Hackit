@@ -1,0 +1,11 @@
+rank,record_id,campus_group,primary_interest,event_type,event_neighborhood,event_cost_usd,is_free,actual_interest,predicted_interest
+1,SYN0045,Boston University,entrepreneurship,local_market,Back Bay,0,1,9.0,7.233879727047616
+2,SYN0214,Northeastern,writing,local_market,Roxbury,0,1,6.0,7.230033208682229
+3,SYN0219,Suffolk,photography,art_showcase,Dorchester,0,1,8.0,7.053236023027882
+4,SYN0397,UMass Boston,volunteering,creative_workshop,Back Bay,0,1,7.8,7.0172381280096285
+5,SYN0160,Suffolk,volunteering,networking,Back Bay,5,0,5.7,6.948608178540997
+6,SYN0236,Emerson,technology,creative_workshop,Jamaica Plain,0,1,7.5,6.921243686001837
+7,SYN0084,Northeastern,entrepreneurship,networking,Back Bay,0,1,7.1,6.881112825338825
+8,SYN0178,UMass Boston,photography,creative_workshop,Back Bay,0,1,7.2,6.809271180318916
+9,SYN0460,Boston University,technology,creative_workshop,Dorchester,0,1,7.7,6.668792715352023
+10,SYN0372,Emerson,technology,art_showcase,Dorchester,0,1,7.8,6.642623490139058

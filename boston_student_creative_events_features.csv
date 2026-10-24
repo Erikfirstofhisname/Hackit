@@ -1,0 +1,501 @@
+record_id,data_origin,campus_group,primary_interest,event_type,event_neighborhood,preferred_time,travel_time_minutes,event_cost_usd,interest_match_score_1_to_5,social_comfort_1_to_5,community_impact_importance_1_to_5,cross_campus_event,apps_currently_used_for_discovery,simulated_interest_rating_1_to_10,is_free,cost_band,log1p_cost,is_cross_campus,civic_fit,cross_campus_x_impact,community_engagement_index
+SYN0001,synthetic_simulated_not_real_student_data,Boston University,photography,networking,Back Bay,weekend_evening,36,0,3,1,4,1,5,4.0,1,free,0.0,1,0,4,0.65
+SYN0002,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,networking,Back Bay,weekday_evening,34,20,3,4,3,1,3,3.5,0,mid,3.044522437723423,1,0,3,0.7000000000000001
+SYN0003,synthetic_simulated_not_real_student_data,Emerson,photography,creative_workshop,Jamaica Plain,weekend_evening,24,0,4,4,1,0,6,4.4,1,free,0.0,0,0,0,0.0
+SYN0004,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,creative_workshop,Fenway,weekend_morning,29,10,4,1,5,1,5,4.7,0,low,2.3978952727983707,1,0,5,0.7333333333333334
+SYN0005,synthetic_simulated_not_real_student_data,Northeastern,design,community_service,Dorchester,weekend_morning,38,5,4,1,2,0,2,4.6,0,low,1.791759469228055,0,2,0,0.35000000000000003
+SYN0006,synthetic_simulated_not_real_student_data,Suffolk,technology,local_market,Downtown,weekend_afternoon,31,20,3,5,5,1,3,5.5,0,mid,3.044522437723423,1,0,5,0.8666666666666667
+SYN0007,synthetic_simulated_not_real_student_data,Boston University,fashion,creative_workshop,Cambridge,weekday_afternoon,25,20,4,4,3,1,5,4.6,0,mid,3.044522437723423,1,0,3,0.5666666666666667
+SYN0008,synthetic_simulated_not_real_student_data,Suffolk,volunteering,art_showcase,Dorchester,weekday_afternoon,42,5,4,4,5,0,4,5.2,0,low,1.791759469228055,0,0,0,0.4666666666666666
+SYN0009,synthetic_simulated_not_real_student_data,Emerson,volunteering,art_showcase,Dorchester,weekend_morning,34,10,2,1,5,0,2,3.4,0,low,2.3978952727983707,0,0,0,0.6
+SYN0010,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,community_service,Cambridge,weekday_afternoon,30,25,3,2,1,1,4,3.0,0,high,3.258096538021482,1,1,1,0.4666666666666666
+SYN0011,synthetic_simulated_not_real_student_data,Emerson,technology,networking,Fenway,weekend_evening,17,0,1,1,4,0,5,3.5,1,free,0.0,0,0,0,0.31666666666666665
+SYN0012,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,networking,Jamaica Plain,weekday_afternoon,30,5,1,3,2,0,2,2.7,0,low,1.791759469228055,0,0,0,0.35000000000000003
+SYN0013,synthetic_simulated_not_real_student_data,Suffolk,volunteering,creative_workshop,Fenway,weekday_afternoon,13,0,3,5,3,1,2,7.2,1,free,0.0,1,0,3,0.7666666666666666
+SYN0014,synthetic_simulated_not_real_student_data,Boston University,music,art_showcase,Cambridge,weekend_morning,22,0,3,1,1,1,3,2.4,1,free,0.0,1,0,1,0.5333333333333333
+SYN0015,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,art_showcase,Back Bay,weekday_afternoon,7,0,3,4,4,1,3,6.2,1,free,0.0,1,0,4,0.7833333333333333
+SYN0016,synthetic_simulated_not_real_student_data,Emerson,fashion,art_showcase,Downtown,weekday_afternoon,27,20,1,1,1,0,2,1.7,0,mid,3.044522437723423,0,0,0,0.26666666666666666
+SYN0017,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,art_showcase,Cambridge,weekday_afternoon,13,25,3,3,4,0,4,3.9,0,high,3.258096538021482,0,0,0,0.3833333333333333
+SYN0018,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,networking,Back Bay,weekend_afternoon,35,0,4,3,3,0,6,3.8,1,free,0.0,0,0,0,0.16666666666666666
+SYN0019,synthetic_simulated_not_real_student_data,Suffolk,volunteering,community_service,Jamaica Plain,weekday_evening,20,20,2,3,2,0,5,2.8,0,mid,3.044522437723423,0,2,0,0.15
+SYN0020,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,art_showcase,Fenway,weekday_afternoon,19,0,2,2,4,1,5,4.5,1,free,0.0,1,0,4,0.65
+SYN0021,synthetic_simulated_not_real_student_data,UMass Boston,music,coworking,Jamaica Plain,weekday_evening,13,0,3,3,2,0,5,5.1,1,free,0.0,0,0,0,0.15
+SYN0022,synthetic_simulated_not_real_student_data,Northeastern,technology,coworking,Downtown,weekday_evening,23,25,5,2,1,1,1,4.4,0,high,3.258096538021482,1,0,1,0.6666666666666666
+SYN0023,synthetic_simulated_not_real_student_data,Suffolk,music,coworking,Roxbury,weekend_evening,43,20,2,5,1,1,4,4.0,0,mid,3.044522437723423,1,0,1,0.4666666666666666
+SYN0024,synthetic_simulated_not_real_student_data,Boston University,photography,art_showcase,Fenway,weekday_evening,30,15,2,4,1,0,6,1.2,0,mid,2.772588722239781,0,0,0,0.0
+SYN0025,synthetic_simulated_not_real_student_data,UMass Boston,photography,local_market,Jamaica Plain,weekday_afternoon,20,0,4,3,1,1,2,4.5,1,free,0.0,1,0,1,0.6
+SYN0026,synthetic_simulated_not_real_student_data,Boston University,technology,coworking,Back Bay,weekend_morning,23,25,1,1,2,0,1,2.3,0,high,3.258096538021482,0,0,0,0.4166666666666667
+SYN0027,synthetic_simulated_not_real_student_data,UMass Boston,technology,networking,Jamaica Plain,weekend_afternoon,10,5,5,1,1,1,5,3.9,0,low,1.791759469228055,1,0,1,0.39999999999999997
+SYN0028,synthetic_simulated_not_real_student_data,UMass Boston,writing,creative_workshop,Back Bay,weekend_evening,19,25,1,2,3,0,4,3.2,0,high,3.258096538021482,0,0,0,0.3
+SYN0029,synthetic_simulated_not_real_student_data,Northeastern,volunteering,coworking,Back Bay,weekday_afternoon,27,0,5,4,4,0,1,7.0,1,free,0.0,0,0,0,0.5833333333333334
+SYN0030,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,art_showcase,Roxbury,weekend_evening,21,5,4,3,5,1,1,7.7,0,low,1.791759469228055,1,0,5,1.0
+SYN0031,synthetic_simulated_not_real_student_data,Boston University,music,local_market,Back Bay,weekday_evening,23,20,5,4,4,1,4,5.6,0,mid,3.044522437723423,1,0,4,0.7166666666666667
+SYN0032,synthetic_simulated_not_real_student_data,Suffolk,photography,networking,Dorchester,weekend_afternoon,5,0,3,3,2,0,2,4.0,1,free,0.0,0,0,0,0.35000000000000003
+SYN0033,synthetic_simulated_not_real_student_data,Boston University,writing,creative_workshop,Jamaica Plain,weekday_afternoon,20,0,1,1,2,1,2,2.9,1,free,0.0,1,0,2,0.6833333333333332
+SYN0034,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,creative_workshop,Roxbury,weekday_evening,23,5,3,1,4,0,1,4.8,0,low,1.791759469228055,0,0,0,0.5833333333333334
+SYN0035,synthetic_simulated_not_real_student_data,UMass Boston,writing,art_showcase,Back Bay,weekend_afternoon,26,20,5,2,4,1,6,4.6,0,mid,3.044522437723423,1,0,4,0.5833333333333334
+SYN0036,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,creative_workshop,Jamaica Plain,weekday_evening,50,15,5,3,2,0,1,3.7,0,mid,2.772588722239781,0,0,0,0.4166666666666667
+SYN0037,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,creative_workshop,Fenway,weekend_evening,5,20,5,5,2,1,6,5.5,0,mid,3.044522437723423,1,0,2,0.4166666666666667
+SYN0038,synthetic_simulated_not_real_student_data,Boston University,volunteering,art_showcase,Downtown,weekend_afternoon,23,20,2,3,5,1,6,1.6,0,mid,3.044522437723423,1,0,5,0.6666666666666666
+SYN0039,synthetic_simulated_not_real_student_data,Suffolk,writing,art_showcase,Roxbury,weekday_evening,20,5,1,3,4,0,2,2.3,0,low,1.791759469228055,0,0,0,0.5166666666666667
+SYN0040,synthetic_simulated_not_real_student_data,Suffolk,volunteering,community_service,Back Bay,weekday_evening,12,0,4,2,4,1,6,7.3,1,free,0.0,1,4,4,0.5833333333333334
+SYN0041,synthetic_simulated_not_real_student_data,Northeastern,writing,networking,Jamaica Plain,weekend_evening,30,0,3,5,4,1,4,5.0,1,free,0.0,1,0,4,0.7166666666666667
+SYN0042,synthetic_simulated_not_real_student_data,Boston University,fashion,creative_workshop,Downtown,weekend_afternoon,22,25,4,4,4,0,5,5.4,0,high,3.258096538021482,0,0,0,0.31666666666666665
+SYN0043,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,creative_workshop,Jamaica Plain,weekend_evening,18,5,3,3,5,1,5,4.5,0,low,1.791759469228055,1,0,5,0.7333333333333334
+SYN0044,synthetic_simulated_not_real_student_data,Northeastern,photography,art_showcase,Dorchester,weekday_afternoon,28,0,1,3,3,1,3,3.9,1,free,0.0,1,0,3,0.7000000000000001
+SYN0045,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,local_market,Back Bay,weekend_morning,5,0,5,5,4,0,1,9.0,1,free,0.0,0,0,0,0.5833333333333334
+SYN0046,synthetic_simulated_not_real_student_data,Emerson,design,networking,Jamaica Plain,weekend_afternoon,34,15,4,2,5,1,5,5.3,0,mid,2.772588722239781,1,0,5,0.7333333333333334
+SYN0047,synthetic_simulated_not_real_student_data,Suffolk,writing,community_service,Fenway,weekday_afternoon,29,0,3,5,4,0,3,6.7,1,free,0.0,0,4,0,0.45
+SYN0048,synthetic_simulated_not_real_student_data,Emerson,fashion,coworking,Fenway,weekend_afternoon,35,0,4,2,1,1,5,5.0,1,free,0.0,1,0,1,0.39999999999999997
+SYN0049,synthetic_simulated_not_real_student_data,UMass Boston,design,coworking,Jamaica Plain,weekend_afternoon,5,5,1,3,3,1,1,5.5,0,low,1.791759469228055,1,0,3,0.8333333333333334
+SYN0050,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,community_service,Jamaica Plain,weekend_morning,15,0,3,2,4,1,5,3.9,1,free,0.0,1,4,4,0.65
+SYN0051,synthetic_simulated_not_real_student_data,Other Boston-area college,design,coworking,Downtown,weekday_evening,30,0,4,1,1,1,4,4.4,1,free,0.0,1,0,1,0.4666666666666666
+SYN0052,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,coworking,Jamaica Plain,weekday_afternoon,16,5,5,1,5,1,2,6.4,0,low,1.791759469228055,1,0,5,0.9333333333333332
+SYN0053,synthetic_simulated_not_real_student_data,Emerson,music,creative_workshop,Dorchester,weekday_afternoon,34,20,5,4,5,1,2,4.3,0,mid,3.044522437723423,1,0,5,0.9333333333333332
+SYN0054,synthetic_simulated_not_real_student_data,UMass Boston,fashion,local_market,Jamaica Plain,weekend_evening,27,20,5,4,3,1,1,5.4,0,mid,3.044522437723423,1,0,3,0.8333333333333334
+SYN0055,synthetic_simulated_not_real_student_data,UMass Boston,photography,networking,Back Bay,weekend_afternoon,26,0,3,5,5,0,5,4.8,1,free,0.0,0,0,0,0.39999999999999997
+SYN0056,synthetic_simulated_not_real_student_data,Northeastern,photography,art_showcase,Back Bay,weekend_evening,8,10,1,1,1,1,1,2.7,0,low,2.3978952727983707,1,0,1,0.6666666666666666
+SYN0057,synthetic_simulated_not_real_student_data,Boston University,design,creative_workshop,Fenway,weekday_afternoon,18,5,3,5,3,0,5,4.7,0,low,1.791759469228055,0,0,0,0.2333333333333333
+SYN0058,synthetic_simulated_not_real_student_data,Emerson,writing,creative_workshop,Roxbury,weekend_evening,20,5,3,3,2,1,4,5.5,0,low,1.791759469228055,1,0,2,0.5499999999999999
+SYN0059,synthetic_simulated_not_real_student_data,UMass Boston,fashion,networking,Downtown,weekend_morning,48,0,5,1,5,0,2,6.6,1,free,0.0,0,0,0,0.6
+SYN0060,synthetic_simulated_not_real_student_data,Suffolk,volunteering,art_showcase,Fenway,weekend_afternoon,28,0,5,3,5,0,4,5.5,1,free,0.0,0,0,0,0.4666666666666666
+SYN0061,synthetic_simulated_not_real_student_data,UMass Boston,technology,networking,Back Bay,weekend_morning,38,0,2,3,3,1,5,3.5,1,free,0.0,1,0,3,0.5666666666666667
+SYN0062,synthetic_simulated_not_real_student_data,Emerson,volunteering,community_service,Roxbury,weekend_afternoon,37,0,3,3,3,1,3,4.9,1,free,0.0,1,3,3,0.7000000000000001
+SYN0063,synthetic_simulated_not_real_student_data,Boston University,writing,coworking,Dorchester,weekend_evening,24,15,2,3,2,1,2,2.8,0,mid,2.772588722239781,1,0,2,0.6833333333333332
+SYN0064,synthetic_simulated_not_real_student_data,Suffolk,design,creative_workshop,Dorchester,weekday_afternoon,38,20,1,1,3,0,3,1.3,0,mid,3.044522437723423,0,0,0,0.3666666666666667
+SYN0065,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Jamaica Plain,weekday_afternoon,5,15,3,5,4,0,1,5.0,0,mid,2.772588722239781,0,0,0,0.5833333333333334
+SYN0066,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,community_service,Back Bay,weekend_evening,54,5,3,4,4,0,5,2.6,0,low,1.791759469228055,0,4,0,0.31666666666666665
+SYN0067,synthetic_simulated_not_real_student_data,Suffolk,writing,art_showcase,Fenway,weekday_afternoon,34,20,3,3,4,0,1,5.0,0,mid,3.044522437723423,0,0,0,0.5833333333333334
+SYN0068,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,art_showcase,Roxbury,weekend_evening,41,15,3,1,5,0,3,5.1,0,mid,2.772588722239781,0,0,0,0.5333333333333333
+SYN0069,synthetic_simulated_not_real_student_data,Boston University,writing,networking,Back Bay,weekend_morning,20,0,2,1,5,1,1,3.5,1,free,0.0,1,0,5,1.0
+SYN0070,synthetic_simulated_not_real_student_data,Northeastern,fashion,networking,Jamaica Plain,weekend_morning,5,0,2,1,5,0,6,4.5,1,free,0.0,0,0,0,0.3333333333333333
+SYN0071,synthetic_simulated_not_real_student_data,Emerson,volunteering,art_showcase,Cambridge,weekend_afternoon,27,15,4,2,5,1,3,5.8,0,mid,2.772588722239781,1,0,5,0.8666666666666667
+SYN0072,synthetic_simulated_not_real_student_data,Suffolk,music,local_market,Downtown,weekend_evening,23,5,2,5,1,1,6,2.6,0,low,1.791759469228055,1,0,1,0.3333333333333333
+SYN0073,synthetic_simulated_not_real_student_data,Suffolk,volunteering,networking,Back Bay,weekday_afternoon,24,25,4,5,2,1,2,5.9,0,high,3.258096538021482,1,0,2,0.6833333333333332
+SYN0074,synthetic_simulated_not_real_student_data,Northeastern,music,creative_workshop,Downtown,weekend_evening,31,5,1,2,3,1,1,3.6,0,low,1.791759469228055,1,0,3,0.8333333333333334
+SYN0075,synthetic_simulated_not_real_student_data,Boston University,fashion,art_showcase,Downtown,weekend_evening,41,25,5,3,4,1,6,2.7,0,high,3.258096538021482,1,0,4,0.5833333333333334
+SYN0076,synthetic_simulated_not_real_student_data,Other Boston-area college,music,local_market,Back Bay,weekend_evening,33,10,5,4,4,0,4,6.1,0,low,2.3978952727983707,0,0,0,0.3833333333333333
+SYN0077,synthetic_simulated_not_real_student_data,Other Boston-area college,design,coworking,Roxbury,weekday_evening,46,25,4,4,1,0,1,2.4,0,high,3.258096538021482,0,0,0,0.3333333333333333
+SYN0078,synthetic_simulated_not_real_student_data,Boston University,volunteering,networking,Jamaica Plain,weekend_evening,27,0,2,5,1,0,5,4.6,1,free,0.0,0,0,0,0.06666666666666665
+SYN0079,synthetic_simulated_not_real_student_data,Emerson,fashion,local_market,Roxbury,weekend_evening,34,0,1,1,5,0,1,2.6,1,free,0.0,0,0,0,0.6666666666666666
+SYN0080,synthetic_simulated_not_real_student_data,Boston University,technology,art_showcase,Downtown,weekend_afternoon,15,15,2,4,2,1,1,3.7,0,mid,2.772588722239781,1,0,2,0.75
+SYN0081,synthetic_simulated_not_real_student_data,Emerson,photography,coworking,Back Bay,weekday_afternoon,28,0,3,4,4,0,3,4.8,1,free,0.0,0,0,0,0.45
+SYN0082,synthetic_simulated_not_real_student_data,Boston University,volunteering,community_service,Fenway,weekend_evening,44,20,5,5,4,0,4,5.1,0,mid,3.044522437723423,0,4,0,0.3833333333333333
+SYN0083,synthetic_simulated_not_real_student_data,Northeastern,photography,coworking,Jamaica Plain,weekday_afternoon,31,15,3,2,3,1,5,5.6,0,mid,2.772588722239781,1,0,3,0.5666666666666667
+SYN0084,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,networking,Back Bay,weekday_afternoon,32,0,5,5,4,1,4,7.1,1,free,0.0,1,0,4,0.7166666666666667
+SYN0085,synthetic_simulated_not_real_student_data,Other Boston-area college,design,networking,Fenway,weekday_afternoon,45,0,2,1,3,0,1,2.4,1,free,0.0,0,0,0,0.5
+SYN0086,synthetic_simulated_not_real_student_data,Emerson,technology,community_service,Back Bay,weekend_morning,5,25,3,4,5,1,2,5.6,0,high,3.258096538021482,1,5,5,0.9333333333333332
+SYN0087,synthetic_simulated_not_real_student_data,Northeastern,design,community_service,Jamaica Plain,weekend_evening,18,25,2,4,4,1,4,3.4,0,high,3.258096538021482,1,4,4,0.7166666666666667
+SYN0088,synthetic_simulated_not_real_student_data,Northeastern,writing,community_service,Roxbury,weekday_afternoon,53,0,2,3,3,1,5,4.1,1,free,0.0,1,3,3,0.5666666666666667
+SYN0089,synthetic_simulated_not_real_student_data,Suffolk,writing,coworking,Downtown,weekend_afternoon,19,5,1,1,2,1,1,2.7,0,low,1.791759469228055,1,0,2,0.75
+SYN0090,synthetic_simulated_not_real_student_data,Other Boston-area college,music,networking,Jamaica Plain,weekend_morning,36,25,4,5,2,0,1,2.4,0,high,3.258096538021482,0,0,0,0.4166666666666667
+SYN0091,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,networking,Roxbury,weekend_morning,38,0,5,1,4,0,3,6.4,1,free,0.0,0,0,0,0.45
+SYN0092,synthetic_simulated_not_real_student_data,Boston University,technology,creative_workshop,Jamaica Plain,weekday_evening,22,0,1,3,2,0,1,2.4,1,free,0.0,0,0,0,0.4166666666666667
+SYN0093,synthetic_simulated_not_real_student_data,UMass Boston,fashion,networking,Roxbury,weekend_morning,6,5,3,3,3,1,6,4.9,0,low,1.791759469228055,1,0,3,0.5
+SYN0094,synthetic_simulated_not_real_student_data,Northeastern,fashion,community_service,Jamaica Plain,weekend_morning,13,0,4,2,2,0,6,3.6,1,free,0.0,0,2,0,0.08333333333333333
+SYN0095,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Roxbury,weekday_afternoon,31,0,1,1,1,1,1,3.3,1,free,0.0,1,0,1,0.6666666666666666
+SYN0096,synthetic_simulated_not_real_student_data,UMass Boston,writing,creative_workshop,Downtown,weekend_afternoon,37,0,2,3,4,1,6,4.1,1,free,0.0,1,0,4,0.5833333333333334
+SYN0097,synthetic_simulated_not_real_student_data,Other Boston-area college,music,art_showcase,Back Bay,weekday_afternoon,20,25,2,5,2,0,6,1.9,0,high,3.258096538021482,0,0,0,0.08333333333333333
+SYN0098,synthetic_simulated_not_real_student_data,Emerson,technology,coworking,Dorchester,weekday_evening,13,0,3,2,1,1,4,5.4,1,free,0.0,1,0,1,0.4666666666666666
+SYN0099,synthetic_simulated_not_real_student_data,Suffolk,volunteering,community_service,Cambridge,weekday_afternoon,29,15,2,2,4,0,1,2.4,0,mid,2.772588722239781,0,4,0,0.5833333333333334
+SYN0100,synthetic_simulated_not_real_student_data,Boston University,writing,local_market,Cambridge,weekday_evening,28,0,2,3,4,0,1,3.5,1,free,0.0,0,0,0,0.5833333333333334
+SYN0101,synthetic_simulated_not_real_student_data,Northeastern,photography,networking,Dorchester,weekend_evening,24,25,3,1,3,1,4,3.4,0,high,3.258096538021482,1,0,3,0.6333333333333333
+SYN0102,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,coworking,Fenway,weekend_morning,12,0,4,2,3,0,4,5.7,1,free,0.0,0,0,0,0.3
+SYN0103,synthetic_simulated_not_real_student_data,Emerson,music,local_market,Roxbury,weekday_afternoon,36,0,5,2,5,1,2,5.9,1,free,0.0,1,0,5,0.9333333333333332
+SYN0104,synthetic_simulated_not_real_student_data,Emerson,fashion,community_service,Cambridge,weekend_afternoon,40,20,2,3,4,1,6,2.8,0,mid,3.044522437723423,1,4,4,0.5833333333333334
+SYN0105,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Dorchester,weekend_afternoon,28,5,5,3,4,0,6,5.3,0,low,1.791759469228055,0,0,0,0.25
+SYN0106,synthetic_simulated_not_real_student_data,Boston University,fashion,creative_workshop,Fenway,weekend_evening,19,15,5,1,5,1,6,4.6,0,mid,2.772588722239781,1,0,5,0.6666666666666666
+SYN0107,synthetic_simulated_not_real_student_data,Suffolk,music,local_market,Downtown,weekend_evening,25,5,1,3,4,1,5,3.9,0,low,1.791759469228055,1,0,4,0.65
+SYN0108,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Cambridge,weekend_evening,15,20,3,4,1,0,2,5.5,0,mid,3.044522437723423,0,0,0,0.26666666666666666
+SYN0109,synthetic_simulated_not_real_student_data,UMass Boston,design,coworking,Jamaica Plain,weekday_evening,46,25,4,5,4,0,2,7.6,0,high,3.258096538021482,0,0,0,0.5166666666666667
+SYN0110,synthetic_simulated_not_real_student_data,Emerson,volunteering,networking,Dorchester,weekend_afternoon,20,10,1,3,2,0,3,2.9,0,low,2.3978952727983707,0,0,0,0.2833333333333333
+SYN0111,synthetic_simulated_not_real_student_data,UMass Boston,writing,creative_workshop,Fenway,weekend_afternoon,5,0,4,5,1,0,1,5.9,1,free,0.0,0,0,0,0.3333333333333333
+SYN0112,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,community_service,Back Bay,weekday_evening,8,5,1,3,3,0,2,3.9,0,low,1.791759469228055,0,3,0,0.43333333333333335
+SYN0113,synthetic_simulated_not_real_student_data,Suffolk,photography,coworking,Roxbury,weekend_afternoon,5,25,2,1,1,0,2,2.3,0,high,3.258096538021482,0,0,0,0.26666666666666666
+SYN0114,synthetic_simulated_not_real_student_data,Other Boston-area college,music,coworking,Dorchester,weekend_evening,11,0,3,5,3,0,1,6.9,1,free,0.0,0,0,0,0.5
+SYN0115,synthetic_simulated_not_real_student_data,Emerson,fashion,creative_workshop,Cambridge,weekend_evening,15,5,3,3,1,0,2,3.9,0,low,1.791759469228055,0,0,0,0.26666666666666666
+SYN0116,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,art_showcase,Back Bay,weekend_afternoon,30,20,5,2,1,0,5,3.7,0,mid,3.044522437723423,0,0,0,0.06666666666666665
+SYN0117,synthetic_simulated_not_real_student_data,Northeastern,photography,coworking,Fenway,weekday_afternoon,22,15,2,1,1,0,6,1.2,0,mid,2.772588722239781,0,0,0,0.0
+SYN0118,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,networking,Roxbury,weekday_evening,36,0,3,5,4,1,3,6.1,1,free,0.0,1,0,4,0.7833333333333333
+SYN0119,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,community_service,Fenway,weekday_afternoon,14,0,1,5,2,1,4,5.7,1,free,0.0,1,2,2,0.5499999999999999
+SYN0120,synthetic_simulated_not_real_student_data,Emerson,design,networking,Cambridge,weekend_morning,25,0,1,1,1,1,3,4.0,1,free,0.0,1,0,1,0.5333333333333333
+SYN0121,synthetic_simulated_not_real_student_data,UMass Boston,fashion,art_showcase,Jamaica Plain,weekday_evening,23,20,2,1,1,0,6,2.4,0,mid,3.044522437723423,0,0,0,0.0
+SYN0122,synthetic_simulated_not_real_student_data,Emerson,technology,networking,Jamaica Plain,weekend_morning,20,15,5,1,1,1,5,1.2,0,mid,2.772588722239781,1,0,1,0.39999999999999997
+SYN0123,synthetic_simulated_not_real_student_data,Suffolk,music,creative_workshop,Cambridge,weekend_evening,11,10,5,1,1,0,5,6.5,0,low,2.3978952727983707,0,0,0,0.06666666666666665
+SYN0124,synthetic_simulated_not_real_student_data,Boston University,photography,local_market,Cambridge,weekday_evening,26,10,2,3,4,1,1,3.3,0,low,2.3978952727983707,1,0,4,0.9166666666666666
+SYN0125,synthetic_simulated_not_real_student_data,Northeastern,music,creative_workshop,Fenway,weekend_morning,25,5,4,1,3,1,3,5.6,0,low,1.791759469228055,1,0,3,0.7000000000000001
+SYN0126,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Cambridge,weekend_morning,20,15,1,3,4,0,6,1.4,0,mid,2.772588722239781,0,0,0,0.25
+SYN0127,synthetic_simulated_not_real_student_data,Northeastern,volunteering,art_showcase,Jamaica Plain,weekend_evening,32,25,2,3,4,1,5,3.8,0,high,3.258096538021482,1,0,4,0.65
+SYN0128,synthetic_simulated_not_real_student_data,Emerson,design,art_showcase,Roxbury,weekday_evening,42,15,4,2,2,1,3,4.4,0,mid,2.772588722239781,1,0,2,0.6166666666666667
+SYN0129,synthetic_simulated_not_real_student_data,Boston University,fashion,networking,Cambridge,weekend_evening,34,0,3,4,4,0,3,5.6,1,free,0.0,0,0,0,0.45
+SYN0130,synthetic_simulated_not_real_student_data,UMass Boston,music,creative_workshop,Fenway,weekend_afternoon,20,15,2,4,5,0,2,5.9,0,mid,2.772588722239781,0,0,0,0.6
+SYN0131,synthetic_simulated_not_real_student_data,Boston University,fashion,coworking,Cambridge,weekday_evening,12,0,5,1,4,0,1,7.0,1,free,0.0,0,0,0,0.5833333333333334
+SYN0132,synthetic_simulated_not_real_student_data,Boston University,music,coworking,Cambridge,weekday_evening,32,10,4,4,3,1,4,5.3,0,low,2.3978952727983707,1,0,3,0.6333333333333333
+SYN0133,synthetic_simulated_not_real_student_data,Emerson,music,community_service,Cambridge,weekend_evening,27,5,3,4,3,0,3,4.7,0,low,1.791759469228055,0,3,0,0.3666666666666667
+SYN0134,synthetic_simulated_not_real_student_data,Emerson,technology,networking,Roxbury,weekend_evening,33,0,5,2,4,1,3,6.4,1,free,0.0,1,0,4,0.7833333333333333
+SYN0135,synthetic_simulated_not_real_student_data,Suffolk,writing,community_service,Fenway,weekend_evening,31,0,5,5,1,1,5,5.7,1,free,0.0,1,1,1,0.39999999999999997
+SYN0136,synthetic_simulated_not_real_student_data,Boston University,fashion,networking,Downtown,weekend_morning,42,10,4,4,2,0,2,4.9,0,low,2.3978952727983707,0,0,0,0.35000000000000003
+SYN0137,synthetic_simulated_not_real_student_data,Suffolk,music,creative_workshop,Downtown,weekend_evening,38,10,2,1,1,0,3,2.4,0,low,2.3978952727983707,0,0,0,0.19999999999999998
+SYN0138,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,creative_workshop,Downtown,weekend_afternoon,11,0,3,2,2,1,2,5.2,1,free,0.0,1,0,2,0.6833333333333332
+SYN0139,synthetic_simulated_not_real_student_data,Suffolk,photography,art_showcase,Jamaica Plain,weekend_evening,42,15,5,1,3,0,5,4.2,0,mid,2.772588722239781,0,0,0,0.2333333333333333
+SYN0140,synthetic_simulated_not_real_student_data,Other Boston-area college,design,art_showcase,Back Bay,weekday_afternoon,6,10,1,1,3,0,4,2.7,0,low,2.3978952727983707,0,0,0,0.3
+SYN0141,synthetic_simulated_not_real_student_data,Boston University,music,art_showcase,Dorchester,weekend_evening,39,0,4,1,1,1,6,4.9,1,free,0.0,1,0,1,0.3333333333333333
+SYN0142,synthetic_simulated_not_real_student_data,Suffolk,music,networking,Roxbury,weekday_afternoon,31,20,2,2,4,1,5,2.5,0,mid,3.044522437723423,1,0,4,0.65
+SYN0143,synthetic_simulated_not_real_student_data,Suffolk,technology,community_service,Roxbury,weekend_afternoon,21,0,2,3,2,1,1,4.5,1,free,0.0,1,2,2,0.75
+SYN0144,synthetic_simulated_not_real_student_data,UMass Boston,technology,creative_workshop,Fenway,weekend_morning,13,10,2,1,1,0,3,2.5,0,low,2.3978952727983707,0,0,0,0.19999999999999998
+SYN0145,synthetic_simulated_not_real_student_data,UMass Boston,photography,art_showcase,Cambridge,weekend_evening,23,0,1,1,2,1,5,2.4,1,free,0.0,1,0,2,0.48333333333333334
+SYN0146,synthetic_simulated_not_real_student_data,Boston University,design,creative_workshop,Fenway,weekday_evening,40,10,2,2,2,1,4,2.8,0,low,2.3978952727983707,1,0,2,0.5499999999999999
+SYN0147,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,community_service,Fenway,weekday_evening,18,15,5,4,4,0,1,6.1,0,mid,2.772588722239781,0,4,0,0.5833333333333334
+SYN0148,synthetic_simulated_not_real_student_data,Northeastern,fashion,local_market,Dorchester,weekday_evening,36,20,5,1,1,1,3,4.2,0,mid,3.044522437723423,1,0,1,0.5333333333333333
+SYN0149,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,coworking,Jamaica Plain,weekend_evening,7,10,3,2,5,1,2,4.3,0,low,2.3978952727983707,1,0,5,0.9333333333333332
+SYN0150,synthetic_simulated_not_real_student_data,Emerson,photography,art_showcase,Fenway,weekend_evening,46,5,3,1,5,0,4,2.2,0,low,1.791759469228055,0,0,0,0.4666666666666666
+SYN0151,synthetic_simulated_not_real_student_data,Northeastern,volunteering,networking,Roxbury,weekend_afternoon,5,0,1,3,4,0,2,4.7,1,free,0.0,0,0,0,0.5166666666666667
+SYN0152,synthetic_simulated_not_real_student_data,Northeastern,fashion,art_showcase,Downtown,weekend_afternoon,32,0,1,1,3,0,6,2.5,1,free,0.0,0,0,0,0.16666666666666666
+SYN0153,synthetic_simulated_not_real_student_data,Northeastern,writing,coworking,Dorchester,weekend_morning,37,20,3,5,2,0,2,5.6,0,mid,3.044522437723423,0,0,0,0.35000000000000003
+SYN0154,synthetic_simulated_not_real_student_data,Northeastern,design,art_showcase,Dorchester,weekday_evening,12,5,1,2,3,0,2,3.2,0,low,1.791759469228055,0,0,0,0.43333333333333335
+SYN0155,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,community_service,Fenway,weekday_evening,14,10,2,2,5,0,4,3.7,0,low,2.3978952727983707,0,5,0,0.4666666666666666
+SYN0156,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,coworking,Downtown,weekday_afternoon,8,0,3,1,3,1,1,6.4,1,free,0.0,1,0,3,0.8333333333333334
+SYN0157,synthetic_simulated_not_real_student_data,Boston University,technology,local_market,Downtown,weekend_morning,34,5,2,1,1,0,2,1.9,0,low,1.791759469228055,0,0,0,0.26666666666666666
+SYN0158,synthetic_simulated_not_real_student_data,Emerson,photography,local_market,Jamaica Plain,weekday_afternoon,11,0,3,3,2,0,6,4.4,1,free,0.0,0,0,0,0.08333333333333333
+SYN0159,synthetic_simulated_not_real_student_data,Suffolk,writing,art_showcase,Back Bay,weekday_afternoon,31,0,5,1,4,0,6,4.3,1,free,0.0,0,0,0,0.25
+SYN0160,synthetic_simulated_not_real_student_data,Suffolk,volunteering,networking,Back Bay,weekend_morning,25,5,5,5,4,1,3,5.7,0,low,1.791759469228055,1,0,4,0.7833333333333333
+SYN0161,synthetic_simulated_not_real_student_data,Suffolk,music,art_showcase,Fenway,weekend_morning,28,0,2,3,5,0,3,4.5,1,free,0.0,0,0,0,0.5333333333333333
+SYN0162,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,creative_workshop,Back Bay,weekend_afternoon,26,20,4,2,4,1,5,4.6,0,mid,3.044522437723423,1,0,4,0.65
+SYN0163,synthetic_simulated_not_real_student_data,Boston University,volunteering,coworking,Roxbury,weekend_morning,32,25,4,1,5,1,3,5.0,0,high,3.258096538021482,1,0,5,0.8666666666666667
+SYN0164,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Downtown,weekday_afternoon,44,25,1,3,2,0,5,1.0,0,high,3.258096538021482,0,0,0,0.15
+SYN0165,synthetic_simulated_not_real_student_data,Suffolk,fashion,networking,Back Bay,weekday_afternoon,28,25,5,2,5,1,3,6.5,0,high,3.258096538021482,1,0,5,0.8666666666666667
+SYN0166,synthetic_simulated_not_real_student_data,Northeastern,photography,creative_workshop,Back Bay,weekend_afternoon,5,0,2,3,1,1,6,3.2,1,free,0.0,1,0,1,0.3333333333333333
+SYN0167,synthetic_simulated_not_real_student_data,Northeastern,writing,art_showcase,Jamaica Plain,weekend_evening,5,5,3,5,2,0,4,2.8,0,low,1.791759469228055,0,0,0,0.21666666666666667
+SYN0168,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,networking,Jamaica Plain,weekday_evening,20,0,5,1,2,1,6,5.6,1,free,0.0,1,0,2,0.4166666666666667
+SYN0169,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,coworking,Dorchester,weekday_afternoon,29,10,3,3,3,1,1,4.3,0,low,2.3978952727983707,1,0,3,0.8333333333333334
+SYN0170,synthetic_simulated_not_real_student_data,Suffolk,photography,art_showcase,Dorchester,weekday_afternoon,36,25,5,3,3,0,1,5.6,0,high,3.258096538021482,0,0,0,0.5
+SYN0171,synthetic_simulated_not_real_student_data,Suffolk,design,creative_workshop,Back Bay,weekend_evening,28,0,3,5,2,1,1,6.0,1,free,0.0,1,0,2,0.75
+SYN0172,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,art_showcase,Fenway,weekend_morning,30,0,2,1,2,1,6,5.1,1,free,0.0,1,0,2,0.4166666666666667
+SYN0173,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,art_showcase,Back Bay,weekday_evening,23,5,2,1,4,1,6,4.0,0,low,1.791759469228055,1,0,4,0.5833333333333334
+SYN0174,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,creative_workshop,Cambridge,weekend_morning,18,20,4,3,4,0,3,5.8,0,mid,3.044522437723423,0,0,0,0.45
+SYN0175,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,community_service,Cambridge,weekday_afternoon,29,0,1,5,4,0,6,4.5,1,free,0.0,0,4,0,0.25
+SYN0176,synthetic_simulated_not_real_student_data,Boston University,volunteering,coworking,Downtown,weekend_evening,5,15,5,1,2,1,4,5.5,0,mid,2.772588722239781,1,0,2,0.5499999999999999
+SYN0177,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,coworking,Back Bay,weekend_afternoon,5,5,5,3,2,0,3,6.1,0,low,1.791759469228055,0,0,0,0.2833333333333333
+SYN0178,synthetic_simulated_not_real_student_data,UMass Boston,photography,creative_workshop,Back Bay,weekend_afternoon,14,0,5,5,1,1,1,7.2,1,free,0.0,1,0,1,0.6666666666666666
+SYN0179,synthetic_simulated_not_real_student_data,Northeastern,writing,coworking,Cambridge,weekday_evening,22,15,5,5,1,1,2,5.6,0,mid,2.772588722239781,1,0,1,0.6
+SYN0180,synthetic_simulated_not_real_student_data,UMass Boston,music,creative_workshop,Roxbury,weekday_afternoon,33,0,2,5,4,1,4,5.4,1,free,0.0,1,0,4,0.7166666666666667
+SYN0181,synthetic_simulated_not_real_student_data,Boston University,volunteering,art_showcase,Downtown,weekend_evening,40,0,1,2,3,0,2,3.7,1,free,0.0,0,0,0,0.43333333333333335
+SYN0182,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,community_service,Fenway,weekend_afternoon,22,5,4,1,1,0,4,3.0,0,low,1.791759469228055,0,1,0,0.13333333333333333
+SYN0183,synthetic_simulated_not_real_student_data,Suffolk,fashion,creative_workshop,Cambridge,weekend_afternoon,33,15,4,5,5,0,1,4.5,0,mid,2.772588722239781,0,0,0,0.6666666666666666
+SYN0184,synthetic_simulated_not_real_student_data,Emerson,volunteering,networking,Jamaica Plain,weekend_morning,5,0,3,3,5,0,3,6.2,1,free,0.0,0,0,0,0.5333333333333333
+SYN0185,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,creative_workshop,Cambridge,weekend_afternoon,28,10,1,5,3,0,6,2.4,0,low,2.3978952727983707,0,0,0,0.16666666666666666
+SYN0186,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,local_market,Cambridge,weekend_afternoon,20,25,3,3,1,1,6,3.2,0,high,3.258096538021482,1,0,1,0.3333333333333333
+SYN0187,synthetic_simulated_not_real_student_data,Suffolk,music,art_showcase,Cambridge,weekend_afternoon,16,15,3,2,4,0,5,4.1,0,mid,2.772588722239781,0,0,0,0.31666666666666665
+SYN0188,synthetic_simulated_not_real_student_data,Boston University,photography,networking,Back Bay,weekday_evening,5,0,2,1,2,0,4,1.5,1,free,0.0,0,0,0,0.21666666666666667
+SYN0189,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,community_service,Back Bay,weekday_afternoon,7,20,2,1,2,0,2,3.4,0,mid,3.044522437723423,0,2,0,0.35000000000000003
+SYN0190,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,local_market,Roxbury,weekend_afternoon,15,20,4,2,5,0,1,5.6,0,mid,3.044522437723423,0,0,0,0.6666666666666666
+SYN0191,synthetic_simulated_not_real_student_data,Northeastern,fashion,creative_workshop,Downtown,weekend_morning,12,0,3,1,2,0,5,2.8,1,free,0.0,0,0,0,0.15
+SYN0192,synthetic_simulated_not_real_student_data,Boston University,photography,networking,Back Bay,weekend_evening,17,0,1,2,2,0,3,3.4,1,free,0.0,0,0,0,0.2833333333333333
+SYN0193,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Roxbury,weekday_evening,26,0,1,1,4,0,2,1.4,1,free,0.0,0,0,0,0.5166666666666667
+SYN0194,synthetic_simulated_not_real_student_data,Northeastern,technology,local_market,Dorchester,weekend_evening,40,15,1,4,4,1,6,1.0,0,mid,2.772588722239781,1,0,4,0.5833333333333334
+SYN0195,synthetic_simulated_not_real_student_data,Other Boston-area college,design,coworking,Back Bay,weekend_afternoon,37,20,4,1,3,0,3,4.2,0,mid,3.044522437723423,0,0,0,0.3666666666666667
+SYN0196,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Cambridge,weekend_morning,11,25,4,1,1,0,5,1.7,0,high,3.258096538021482,0,0,0,0.06666666666666665
+SYN0197,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,coworking,Dorchester,weekend_evening,35,0,4,3,5,0,4,5.4,1,free,0.0,0,0,0,0.4666666666666666
+SYN0198,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Downtown,weekday_evening,29,0,4,1,4,0,6,4.3,1,free,0.0,0,0,0,0.25
+SYN0199,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,art_showcase,Downtown,weekday_afternoon,34,0,5,5,5,0,6,6.7,1,free,0.0,0,0,0,0.3333333333333333
+SYN0200,synthetic_simulated_not_real_student_data,Boston University,music,local_market,Fenway,weekday_evening,17,0,3,5,1,0,3,3.3,1,free,0.0,0,0,0,0.19999999999999998
+SYN0201,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Downtown,weekend_afternoon,24,15,5,5,4,0,1,7.5,0,mid,2.772588722239781,0,0,0,0.5833333333333334
+SYN0202,synthetic_simulated_not_real_student_data,Other Boston-area college,music,creative_workshop,Roxbury,weekday_evening,23,15,4,5,1,0,3,3.1,0,mid,2.772588722239781,0,0,0,0.19999999999999998
+SYN0203,synthetic_simulated_not_real_student_data,Suffolk,fashion,creative_workshop,Roxbury,weekday_afternoon,19,5,4,3,3,1,4,4.9,0,low,1.791759469228055,1,0,3,0.6333333333333333
+SYN0204,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,networking,Downtown,weekend_morning,27,0,5,2,1,1,5,6.2,1,free,0.0,1,0,1,0.39999999999999997
+SYN0205,synthetic_simulated_not_real_student_data,Suffolk,design,creative_workshop,Roxbury,weekday_afternoon,41,0,1,2,2,1,6,1.9,1,free,0.0,1,0,2,0.4166666666666667
+SYN0206,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,community_service,Dorchester,weekday_evening,25,0,3,5,5,0,2,4.4,1,free,0.0,0,5,0,0.6
+SYN0207,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,creative_workshop,Dorchester,weekday_afternoon,25,5,1,4,2,0,6,3.6,0,low,1.791759469228055,0,0,0,0.08333333333333333
+SYN0208,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,creative_workshop,Back Bay,weekday_afternoon,37,10,1,2,3,1,5,2.4,0,low,2.3978952727983707,1,0,3,0.5666666666666667
+SYN0209,synthetic_simulated_not_real_student_data,Boston University,photography,coworking,Dorchester,weekend_afternoon,36,0,1,5,5,1,5,4.8,1,free,0.0,1,0,5,0.7333333333333334
+SYN0210,synthetic_simulated_not_real_student_data,Boston University,fashion,community_service,Fenway,weekday_afternoon,7,0,4,3,3,1,4,5.9,1,free,0.0,1,3,3,0.6333333333333333
+SYN0211,synthetic_simulated_not_real_student_data,Boston University,writing,coworking,Cambridge,weekday_evening,31,0,2,4,4,1,2,5.3,1,free,0.0,1,0,4,0.85
+SYN0212,synthetic_simulated_not_real_student_data,Other Boston-area college,design,local_market,Cambridge,weekend_evening,53,5,2,2,4,1,3,4.6,0,low,1.791759469228055,1,0,4,0.7833333333333333
+SYN0213,synthetic_simulated_not_real_student_data,UMass Boston,fashion,networking,Downtown,weekend_evening,28,10,4,4,4,0,6,5.1,0,low,2.3978952727983707,0,0,0,0.25
+SYN0214,synthetic_simulated_not_real_student_data,Northeastern,writing,local_market,Roxbury,weekday_evening,36,0,5,4,5,1,1,6.0,1,free,0.0,1,0,5,1.0
+SYN0215,synthetic_simulated_not_real_student_data,Boston University,technology,art_showcase,Downtown,weekend_morning,17,5,5,2,4,1,1,6.6,0,low,1.791759469228055,1,0,4,0.9166666666666666
+SYN0216,synthetic_simulated_not_real_student_data,Other Boston-area college,design,creative_workshop,Fenway,weekend_afternoon,23,10,2,5,4,1,6,3.4,0,low,2.3978952727983707,1,0,4,0.5833333333333334
+SYN0217,synthetic_simulated_not_real_student_data,Emerson,volunteering,local_market,Cambridge,weekday_evening,5,5,2,1,3,1,5,4.0,0,low,1.791759469228055,1,0,3,0.5666666666666667
+SYN0218,synthetic_simulated_not_real_student_data,Boston University,music,networking,Dorchester,weekend_morning,19,0,2,4,1,0,6,2.8,1,free,0.0,0,0,0,0.0
+SYN0219,synthetic_simulated_not_real_student_data,Suffolk,photography,art_showcase,Dorchester,weekday_afternoon,12,0,4,5,5,1,2,8.0,1,free,0.0,1,0,5,0.9333333333333332
+SYN0220,synthetic_simulated_not_real_student_data,Northeastern,music,creative_workshop,Roxbury,weekday_afternoon,17,0,1,5,1,0,1,2.8,1,free,0.0,0,0,0,0.3333333333333333
+SYN0221,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,local_market,Dorchester,weekend_afternoon,23,0,3,4,5,1,5,5.3,1,free,0.0,1,0,5,0.7333333333333334
+SYN0222,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,networking,Dorchester,weekday_afternoon,15,20,3,2,4,0,2,4.8,0,mid,3.044522437723423,0,0,0,0.5166666666666667
+SYN0223,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,art_showcase,Downtown,weekend_evening,18,25,2,4,4,0,2,3.2,0,high,3.258096538021482,0,0,0,0.5166666666666667
+SYN0224,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,community_service,Jamaica Plain,weekend_morning,38,0,2,3,3,1,4,3.0,1,free,0.0,1,3,3,0.6333333333333333
+SYN0225,synthetic_simulated_not_real_student_data,UMass Boston,technology,art_showcase,Downtown,weekend_afternoon,17,10,4,1,1,0,3,2.8,0,low,2.3978952727983707,0,0,0,0.19999999999999998
+SYN0226,synthetic_simulated_not_real_student_data,Northeastern,technology,networking,Cambridge,weekend_afternoon,19,0,5,4,3,0,3,7.4,1,free,0.0,0,0,0,0.3666666666666667
+SYN0227,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,networking,Jamaica Plain,weekend_morning,11,25,1,4,3,0,4,1.0,0,high,3.258096538021482,0,0,0,0.3
+SYN0228,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,networking,Back Bay,weekend_morning,38,10,3,3,3,0,2,2.5,0,low,2.3978952727983707,0,0,0,0.43333333333333335
+SYN0229,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,networking,Fenway,weekend_afternoon,5,15,2,1,5,1,1,4.2,0,mid,2.772588722239781,1,0,5,1.0
+SYN0230,synthetic_simulated_not_real_student_data,Northeastern,technology,art_showcase,Roxbury,weekday_evening,21,0,2,3,1,1,2,4.4,1,free,0.0,1,0,1,0.6
+SYN0231,synthetic_simulated_not_real_student_data,Emerson,technology,local_market,Back Bay,weekend_evening,5,20,4,2,2,0,2,4.7,0,mid,3.044522437723423,0,0,0,0.35000000000000003
+SYN0232,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,coworking,Dorchester,weekend_evening,30,0,4,4,3,1,6,6.6,1,free,0.0,1,0,3,0.5
+SYN0233,synthetic_simulated_not_real_student_data,Emerson,design,local_market,Roxbury,weekday_evening,35,0,3,5,5,1,6,6.3,1,free,0.0,1,0,5,0.6666666666666666
+SYN0234,synthetic_simulated_not_real_student_data,Northeastern,technology,community_service,Downtown,weekend_morning,31,0,3,3,3,1,3,6.2,1,free,0.0,1,3,3,0.7000000000000001
+SYN0235,synthetic_simulated_not_real_student_data,Suffolk,writing,community_service,Back Bay,weekday_afternoon,35,10,5,5,1,0,2,5.3,0,low,2.3978952727983707,0,1,0,0.26666666666666666
+SYN0236,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Jamaica Plain,weekday_evening,17,0,5,4,4,0,1,7.5,1,free,0.0,0,0,0,0.5833333333333334
+SYN0237,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Dorchester,weekend_evening,29,10,2,4,4,0,3,5.3,0,low,2.3978952727983707,0,0,0,0.45
+SYN0238,synthetic_simulated_not_real_student_data,Boston University,design,coworking,Dorchester,weekday_afternoon,22,10,2,5,4,1,1,6.0,0,low,2.3978952727983707,1,0,4,0.9166666666666666
+SYN0239,synthetic_simulated_not_real_student_data,Emerson,writing,local_market,Roxbury,weekend_morning,12,20,3,3,5,0,3,6.1,0,mid,3.044522437723423,0,0,0,0.5333333333333333
+SYN0240,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,creative_workshop,Dorchester,weekday_evening,19,0,2,1,3,0,4,2.5,1,free,0.0,0,0,0,0.3
+SYN0241,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,local_market,Roxbury,weekend_afternoon,37,20,4,3,4,1,2,4.8,0,mid,3.044522437723423,1,0,4,0.85
+SYN0242,synthetic_simulated_not_real_student_data,Northeastern,writing,networking,Roxbury,weekend_morning,19,0,3,5,3,1,2,6.4,1,free,0.0,1,0,3,0.7666666666666666
+SYN0243,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,coworking,Back Bay,weekend_evening,25,20,4,4,1,1,6,3.4,0,mid,3.044522437723423,1,0,1,0.3333333333333333
+SYN0244,synthetic_simulated_not_real_student_data,Emerson,fashion,creative_workshop,Dorchester,weekend_evening,39,25,3,4,4,0,4,3.4,0,high,3.258096538021482,0,0,0,0.3833333333333333
+SYN0245,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,creative_workshop,Downtown,weekend_afternoon,5,10,4,3,3,1,2,5.5,0,low,2.3978952727983707,1,0,3,0.7666666666666666
+SYN0246,synthetic_simulated_not_real_student_data,Boston University,fashion,community_service,Jamaica Plain,weekday_afternoon,5,15,3,3,3,1,5,3.5,0,mid,2.772588722239781,1,3,3,0.5666666666666667
+SYN0247,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,community_service,Roxbury,weekend_evening,16,10,3,4,1,1,2,3.5,0,low,2.3978952727983707,1,1,1,0.6
+SYN0248,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,creative_workshop,Back Bay,weekday_afternoon,15,20,2,2,3,0,3,3.2,0,mid,3.044522437723423,0,0,0,0.3666666666666667
+SYN0249,synthetic_simulated_not_real_student_data,Northeastern,fashion,community_service,Dorchester,weekend_evening,27,0,1,5,5,0,6,3.8,1,free,0.0,0,5,0,0.3333333333333333
+SYN0250,synthetic_simulated_not_real_student_data,UMass Boston,fashion,coworking,Downtown,weekend_morning,21,0,1,1,1,1,1,3.1,1,free,0.0,1,0,1,0.6666666666666666
+SYN0251,synthetic_simulated_not_real_student_data,UMass Boston,design,networking,Downtown,weekend_morning,22,0,3,2,4,0,4,3.5,1,free,0.0,0,0,0,0.3833333333333333
+SYN0252,synthetic_simulated_not_real_student_data,Emerson,music,creative_workshop,Fenway,weekday_afternoon,43,0,2,3,4,0,5,3.6,1,free,0.0,0,0,0,0.31666666666666665
+SYN0253,synthetic_simulated_not_real_student_data,Emerson,writing,art_showcase,Roxbury,weekday_afternoon,27,20,5,2,4,0,1,5.8,0,mid,3.044522437723423,0,0,0,0.5833333333333334
+SYN0254,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,creative_workshop,Jamaica Plain,weekend_afternoon,26,25,4,2,3,1,4,3.8,0,high,3.258096538021482,1,0,3,0.6333333333333333
+SYN0255,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,creative_workshop,Fenway,weekend_morning,30,10,4,1,1,0,6,3.1,0,low,2.3978952727983707,0,0,0,0.0
+SYN0256,synthetic_simulated_not_real_student_data,Suffolk,photography,coworking,Back Bay,weekday_evening,9,0,2,5,1,0,1,4.7,1,free,0.0,0,0,0,0.3333333333333333
+SYN0257,synthetic_simulated_not_real_student_data,Emerson,writing,creative_workshop,Back Bay,weekend_morning,30,15,5,3,5,1,2,6.4,0,mid,2.772588722239781,1,0,5,0.9333333333333332
+SYN0258,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,networking,Dorchester,weekday_evening,5,20,2,2,5,1,6,3.6,0,mid,3.044522437723423,1,0,5,0.6666666666666666
+SYN0259,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,creative_workshop,Fenway,weekday_evening,33,15,3,4,3,0,5,4.1,0,mid,2.772588722239781,0,0,0,0.2333333333333333
+SYN0260,synthetic_simulated_not_real_student_data,Suffolk,volunteering,community_service,Fenway,weekend_afternoon,15,15,1,2,1,1,4,2.7,0,mid,2.772588722239781,1,1,1,0.4666666666666666
+SYN0261,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,community_service,Cambridge,weekday_afternoon,10,10,5,1,4,0,5,5.6,0,low,2.3978952727983707,0,4,0,0.31666666666666665
+SYN0262,synthetic_simulated_not_real_student_data,Boston University,music,coworking,Roxbury,weekend_afternoon,17,5,4,4,3,1,3,6.2,0,low,1.791759469228055,1,0,3,0.7000000000000001
+SYN0263,synthetic_simulated_not_real_student_data,Emerson,photography,networking,Cambridge,weekday_afternoon,36,0,1,1,4,1,2,3.1,1,free,0.0,1,0,4,0.85
+SYN0264,synthetic_simulated_not_real_student_data,UMass Boston,technology,community_service,Fenway,weekday_evening,25,0,5,1,3,0,3,3.5,1,free,0.0,0,3,0,0.3666666666666667
+SYN0265,synthetic_simulated_not_real_student_data,Northeastern,music,creative_workshop,Downtown,weekday_afternoon,11,0,3,4,2,1,6,4.9,1,free,0.0,1,0,2,0.4166666666666667
+SYN0266,synthetic_simulated_not_real_student_data,Emerson,writing,community_service,Dorchester,weekend_afternoon,27,15,3,5,1,1,3,4.3,0,mid,2.772588722239781,1,1,1,0.5333333333333333
+SYN0267,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,community_service,Dorchester,weekend_evening,5,25,3,5,1,1,1,4.0,0,high,3.258096538021482,1,1,1,0.6666666666666666
+SYN0268,synthetic_simulated_not_real_student_data,UMass Boston,fashion,local_market,Cambridge,weekend_afternoon,41,10,2,5,4,0,2,4.5,0,low,2.3978952727983707,0,0,0,0.5166666666666667
+SYN0269,synthetic_simulated_not_real_student_data,UMass Boston,writing,networking,Back Bay,weekday_evening,30,20,1,3,1,1,2,2.4,0,mid,3.044522437723423,1,0,1,0.6
+SYN0270,synthetic_simulated_not_real_student_data,Suffolk,technology,community_service,Cambridge,weekend_morning,15,5,2,2,1,1,1,5.8,0,low,1.791759469228055,1,1,1,0.6666666666666666
+SYN0271,synthetic_simulated_not_real_student_data,Emerson,volunteering,networking,Back Bay,weekend_evening,26,15,1,5,3,1,6,2.5,0,mid,2.772588722239781,1,0,3,0.5
+SYN0272,synthetic_simulated_not_real_student_data,UMass Boston,fashion,networking,Back Bay,weekday_afternoon,28,0,2,3,1,0,6,5.2,1,free,0.0,0,0,0,0.0
+SYN0273,synthetic_simulated_not_real_student_data,Emerson,music,local_market,Roxbury,weekday_afternoon,13,0,1,5,3,0,4,3.9,1,free,0.0,0,0,0,0.3
+SYN0274,synthetic_simulated_not_real_student_data,Emerson,photography,creative_workshop,Fenway,weekend_evening,27,0,2,1,1,0,4,3.2,1,free,0.0,0,0,0,0.13333333333333333
+SYN0275,synthetic_simulated_not_real_student_data,Suffolk,design,creative_workshop,Downtown,weekday_afternoon,40,0,4,3,5,1,1,8.8,1,free,0.0,1,0,5,1.0
+SYN0276,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,coworking,Fenway,weekday_evening,14,15,4,3,2,0,2,5.1,0,mid,2.772588722239781,0,0,0,0.35000000000000003
+SYN0277,synthetic_simulated_not_real_student_data,Northeastern,writing,art_showcase,Downtown,weekday_afternoon,32,0,1,4,3,0,4,1.6,1,free,0.0,0,0,0,0.3
+SYN0278,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,local_market,Fenway,weekend_evening,23,20,5,2,5,0,4,6.2,0,mid,3.044522437723423,0,0,0,0.4666666666666666
+SYN0279,synthetic_simulated_not_real_student_data,UMass Boston,writing,community_service,Back Bay,weekday_evening,27,0,4,1,2,0,4,4.1,1,free,0.0,0,2,0,0.21666666666666667
+SYN0280,synthetic_simulated_not_real_student_data,Suffolk,fashion,networking,Jamaica Plain,weekend_afternoon,26,0,2,3,2,1,4,3.5,1,free,0.0,1,0,2,0.5499999999999999
+SYN0281,synthetic_simulated_not_real_student_data,Boston University,technology,creative_workshop,Downtown,weekend_morning,34,10,5,5,1,0,1,4.7,0,low,2.3978952727983707,0,0,0,0.3333333333333333
+SYN0282,synthetic_simulated_not_real_student_data,UMass Boston,photography,local_market,Dorchester,weekend_morning,17,20,3,5,5,1,4,5.6,0,mid,3.044522437723423,1,0,5,0.7999999999999999
+SYN0283,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,coworking,Dorchester,weekday_afternoon,26,15,1,2,4,1,4,3.4,0,mid,2.772588722239781,1,0,4,0.7166666666666667
+SYN0284,synthetic_simulated_not_real_student_data,Northeastern,photography,community_service,Downtown,weekend_afternoon,13,15,3,1,4,1,5,3.5,0,mid,2.772588722239781,1,4,4,0.65
+SYN0285,synthetic_simulated_not_real_student_data,Northeastern,music,coworking,Roxbury,weekend_afternoon,8,0,4,2,4,0,1,4.7,1,free,0.0,0,0,0,0.5833333333333334
+SYN0286,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,creative_workshop,Jamaica Plain,weekend_afternoon,12,0,2,4,2,0,3,5.2,1,free,0.0,0,0,0,0.2833333333333333
+SYN0287,synthetic_simulated_not_real_student_data,Northeastern,photography,networking,Back Bay,weekend_morning,38,15,4,5,5,1,1,6.4,0,mid,2.772588722239781,1,0,5,1.0
+SYN0288,synthetic_simulated_not_real_student_data,Northeastern,photography,community_service,Roxbury,weekday_evening,32,0,5,4,4,0,6,6.4,1,free,0.0,0,4,0,0.25
+SYN0289,synthetic_simulated_not_real_student_data,UMass Boston,technology,networking,Cambridge,weekday_afternoon,26,5,2,5,1,0,2,3.2,0,low,1.791759469228055,0,0,0,0.26666666666666666
+SYN0290,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Roxbury,weekday_evening,38,0,4,1,1,0,5,4.1,1,free,0.0,0,0,0,0.06666666666666665
+SYN0291,synthetic_simulated_not_real_student_data,Suffolk,writing,art_showcase,Downtown,weekday_afternoon,30,15,3,1,5,1,2,5.6,0,mid,2.772588722239781,1,0,5,0.9333333333333332
+SYN0292,synthetic_simulated_not_real_student_data,UMass Boston,photography,coworking,Downtown,weekend_evening,18,0,5,1,3,0,6,2.8,1,free,0.0,0,0,0,0.16666666666666666
+SYN0293,synthetic_simulated_not_real_student_data,Emerson,design,networking,Roxbury,weekend_afternoon,48,0,5,3,3,1,1,6.8,1,free,0.0,1,0,3,0.8333333333333334
+SYN0294,synthetic_simulated_not_real_student_data,UMass Boston,technology,networking,Dorchester,weekend_evening,30,25,4,4,5,0,3,7.1,0,high,3.258096538021482,0,0,0,0.5333333333333333
+SYN0295,synthetic_simulated_not_real_student_data,Emerson,music,networking,Fenway,weekday_evening,38,20,5,2,1,0,1,2.2,0,mid,3.044522437723423,0,0,0,0.3333333333333333
+SYN0296,synthetic_simulated_not_real_student_data,Emerson,fashion,creative_workshop,Back Bay,weekend_afternoon,14,0,3,2,3,0,1,4.5,1,free,0.0,0,0,0,0.5
+SYN0297,synthetic_simulated_not_real_student_data,Boston University,music,coworking,Roxbury,weekday_afternoon,37,0,5,1,2,1,5,3.1,1,free,0.0,1,0,2,0.48333333333333334
+SYN0298,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,art_showcase,Roxbury,weekend_evening,22,5,3,1,2,0,4,4.1,0,low,1.791759469228055,0,0,0,0.21666666666666667
+SYN0299,synthetic_simulated_not_real_student_data,Boston University,fashion,local_market,Back Bay,weekend_evening,10,0,3,2,4,1,2,6.8,1,free,0.0,1,0,4,0.85
+SYN0300,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,art_showcase,Jamaica Plain,weekend_evening,20,0,5,3,2,0,1,7.1,1,free,0.0,0,0,0,0.4166666666666667
+SYN0301,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Cambridge,weekend_evening,11,0,4,1,5,1,1,6.2,1,free,0.0,1,0,5,1.0
+SYN0302,synthetic_simulated_not_real_student_data,Boston University,technology,creative_workshop,Dorchester,weekend_afternoon,25,0,1,4,5,1,5,3.0,1,free,0.0,1,0,5,0.7333333333333334
+SYN0303,synthetic_simulated_not_real_student_data,Northeastern,design,art_showcase,Roxbury,weekend_evening,5,0,3,4,4,0,5,3.7,1,free,0.0,0,0,0,0.31666666666666665
+SYN0304,synthetic_simulated_not_real_student_data,UMass Boston,design,creative_workshop,Downtown,weekend_morning,14,20,1,3,3,0,3,2.2,0,mid,3.044522437723423,0,0,0,0.3666666666666667
+SYN0305,synthetic_simulated_not_real_student_data,Emerson,writing,art_showcase,Downtown,weekend_afternoon,28,0,4,4,5,1,4,5.7,1,free,0.0,1,0,5,0.7999999999999999
+SYN0306,synthetic_simulated_not_real_student_data,UMass Boston,writing,community_service,Cambridge,weekend_morning,5,10,2,4,2,0,4,2.3,0,low,2.3978952727983707,0,2,0,0.21666666666666667
+SYN0307,synthetic_simulated_not_real_student_data,Boston University,photography,local_market,Fenway,weekend_morning,16,0,4,2,5,0,6,3.9,1,free,0.0,0,0,0,0.3333333333333333
+SYN0308,synthetic_simulated_not_real_student_data,Emerson,music,community_service,Fenway,weekday_afternoon,26,5,1,1,5,0,6,2.8,0,low,1.791759469228055,0,5,0,0.3333333333333333
+SYN0309,synthetic_simulated_not_real_student_data,Northeastern,technology,creative_workshop,Roxbury,weekday_evening,12,20,5,2,5,1,5,5.2,0,mid,3.044522437723423,1,0,5,0.7333333333333334
+SYN0310,synthetic_simulated_not_real_student_data,Suffolk,fashion,creative_workshop,Jamaica Plain,weekend_evening,25,15,5,3,4,1,2,7.0,0,mid,2.772588722239781,1,0,4,0.85
+SYN0311,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,creative_workshop,Downtown,weekend_afternoon,34,5,4,5,5,0,1,6.8,0,low,1.791759469228055,0,0,0,0.6666666666666666
+SYN0312,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,networking,Cambridge,weekend_afternoon,36,15,5,3,2,0,1,3.9,0,mid,2.772588722239781,0,0,0,0.4166666666666667
+SYN0313,synthetic_simulated_not_real_student_data,Other Boston-area college,music,creative_workshop,Dorchester,weekday_evening,16,25,2,2,2,0,4,3.0,0,high,3.258096538021482,0,0,0,0.21666666666666667
+SYN0314,synthetic_simulated_not_real_student_data,Emerson,writing,coworking,Back Bay,weekday_afternoon,28,0,5,5,2,1,4,4.6,1,free,0.0,1,0,2,0.5499999999999999
+SYN0315,synthetic_simulated_not_real_student_data,Emerson,volunteering,art_showcase,Back Bay,weekday_afternoon,46,25,1,3,1,1,3,1.4,0,high,3.258096538021482,1,0,1,0.5333333333333333
+SYN0316,synthetic_simulated_not_real_student_data,Emerson,writing,networking,Dorchester,weekend_morning,41,20,1,2,5,1,3,3.6,0,mid,3.044522437723423,1,0,5,0.8666666666666667
+SYN0317,synthetic_simulated_not_real_student_data,Northeastern,design,community_service,Jamaica Plain,weekday_evening,38,0,1,3,4,1,6,2.8,1,free,0.0,1,4,4,0.5833333333333334
+SYN0318,synthetic_simulated_not_real_student_data,Boston University,volunteering,creative_workshop,Roxbury,weekday_evening,37,20,5,1,4,1,5,6.2,0,mid,3.044522437723423,1,0,4,0.65
+SYN0319,synthetic_simulated_not_real_student_data,Emerson,fashion,art_showcase,Fenway,weekday_evening,17,15,3,1,1,1,6,3.2,0,mid,2.772588722239781,1,0,1,0.3333333333333333
+SYN0320,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,local_market,Back Bay,weekend_evening,31,0,2,4,5,1,6,4.6,1,free,0.0,1,0,5,0.6666666666666666
+SYN0321,synthetic_simulated_not_real_student_data,Other Boston-area college,music,creative_workshop,Cambridge,weekday_afternoon,24,10,5,3,2,0,1,6.6,0,low,2.3978952727983707,0,0,0,0.4166666666666667
+SYN0322,synthetic_simulated_not_real_student_data,Suffolk,photography,local_market,Downtown,weekend_evening,22,20,5,1,4,0,6,3.2,0,mid,3.044522437723423,0,0,0,0.25
+SYN0323,synthetic_simulated_not_real_student_data,Suffolk,music,coworking,Back Bay,weekend_evening,29,20,3,4,4,0,5,3.6,0,mid,3.044522437723423,0,0,0,0.31666666666666665
+SYN0324,synthetic_simulated_not_real_student_data,UMass Boston,photography,art_showcase,Cambridge,weekday_evening,30,0,2,2,5,1,5,2.5,1,free,0.0,1,0,5,0.7333333333333334
+SYN0325,synthetic_simulated_not_real_student_data,Boston University,music,community_service,Dorchester,weekend_morning,35,5,3,5,5,1,6,5.4,0,low,1.791759469228055,1,5,5,0.6666666666666666
+SYN0326,synthetic_simulated_not_real_student_data,Other Boston-area college,technology,creative_workshop,Downtown,weekend_evening,13,0,4,3,2,1,3,6.1,1,free,0.0,1,0,2,0.6166666666666667
+SYN0327,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,creative_workshop,Downtown,weekend_morning,27,10,4,4,1,1,3,4.0,0,low,2.3978952727983707,1,0,1,0.5333333333333333
+SYN0328,synthetic_simulated_not_real_student_data,Northeastern,volunteering,local_market,Fenway,weekday_afternoon,36,20,5,4,2,1,6,5.7,0,mid,3.044522437723423,1,0,2,0.4166666666666667
+SYN0329,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,local_market,Jamaica Plain,weekend_afternoon,32,0,1,5,1,1,3,4.0,1,free,0.0,1,0,1,0.5333333333333333
+SYN0330,synthetic_simulated_not_real_student_data,Boston University,design,networking,Jamaica Plain,weekend_evening,28,5,3,3,4,0,2,6.1,0,low,1.791759469228055,0,0,0,0.5166666666666667
+SYN0331,synthetic_simulated_not_real_student_data,Suffolk,entrepreneurship,community_service,Back Bay,weekday_evening,14,10,2,5,4,1,1,4.2,0,low,2.3978952727983707,1,4,4,0.9166666666666666
+SYN0332,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Back Bay,weekend_morning,20,5,2,3,2,1,4,4.7,0,low,1.791759469228055,1,0,2,0.5499999999999999
+SYN0333,synthetic_simulated_not_real_student_data,Boston University,writing,local_market,Dorchester,weekday_evening,16,10,2,5,1,0,4,3.4,0,low,2.3978952727983707,0,0,0,0.13333333333333333
+SYN0334,synthetic_simulated_not_real_student_data,Boston University,writing,community_service,Cambridge,weekend_afternoon,24,5,1,3,2,1,3,3.2,0,low,1.791759469228055,1,2,2,0.6166666666666667
+SYN0335,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,coworking,Roxbury,weekday_afternoon,39,10,5,1,5,0,6,4.4,0,low,2.3978952727983707,0,0,0,0.3333333333333333
+SYN0336,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,community_service,Cambridge,weekend_evening,13,0,3,3,2,1,2,4.7,1,free,0.0,1,2,2,0.6833333333333332
+SYN0337,synthetic_simulated_not_real_student_data,Emerson,volunteering,coworking,Dorchester,weekday_evening,5,0,5,5,2,0,4,6.0,1,free,0.0,0,0,0,0.21666666666666667
+SYN0338,synthetic_simulated_not_real_student_data,UMass Boston,design,art_showcase,Back Bay,weekend_morning,30,0,4,2,3,0,2,3.8,1,free,0.0,0,0,0,0.43333333333333335
+SYN0339,synthetic_simulated_not_real_student_data,Boston University,writing,creative_workshop,Roxbury,weekday_evening,21,25,4,1,1,0,4,4.4,0,high,3.258096538021482,0,0,0,0.13333333333333333
+SYN0340,synthetic_simulated_not_real_student_data,Northeastern,volunteering,networking,Cambridge,weekday_afternoon,29,0,1,4,5,1,1,5.2,1,free,0.0,1,0,5,1.0
+SYN0341,synthetic_simulated_not_real_student_data,Northeastern,volunteering,local_market,Jamaica Plain,weekday_evening,16,0,4,2,4,0,3,5.4,1,free,0.0,0,0,0,0.45
+SYN0342,synthetic_simulated_not_real_student_data,Northeastern,technology,local_market,Back Bay,weekend_evening,12,10,3,5,5,1,6,6.6,0,low,2.3978952727983707,1,0,5,0.6666666666666666
+SYN0343,synthetic_simulated_not_real_student_data,Boston University,volunteering,networking,Back Bay,weekend_afternoon,14,10,3,1,1,0,1,4.7,0,low,2.3978952727983707,0,0,0,0.3333333333333333
+SYN0344,synthetic_simulated_not_real_student_data,Suffolk,volunteering,art_showcase,Dorchester,weekend_evening,5,0,2,1,2,1,6,4.3,1,free,0.0,1,0,2,0.4166666666666667
+SYN0345,synthetic_simulated_not_real_student_data,Boston University,fashion,community_service,Downtown,weekend_afternoon,25,0,3,2,3,0,1,3.7,1,free,0.0,0,3,0,0.5
+SYN0346,synthetic_simulated_not_real_student_data,Emerson,photography,community_service,Fenway,weekday_evening,27,0,4,4,3,1,6,5.4,1,free,0.0,1,3,3,0.5
+SYN0347,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,creative_workshop,Back Bay,weekend_afternoon,9,20,1,5,3,1,4,3.3,0,mid,3.044522437723423,1,0,3,0.6333333333333333
+SYN0348,synthetic_simulated_not_real_student_data,Boston University,volunteering,local_market,Fenway,weekend_evening,41,10,3,1,4,1,1,2.7,0,low,2.3978952727983707,1,0,4,0.9166666666666666
+SYN0349,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Cambridge,weekday_afternoon,19,0,2,1,2,1,5,3.8,1,free,0.0,1,0,2,0.48333333333333334
+SYN0350,synthetic_simulated_not_real_student_data,UMass Boston,design,art_showcase,Back Bay,weekday_evening,37,0,1,3,4,1,2,4.5,1,free,0.0,1,0,4,0.85
+SYN0351,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,coworking,Jamaica Plain,weekend_evening,18,0,2,3,5,0,5,2.9,1,free,0.0,0,0,0,0.39999999999999997
+SYN0352,synthetic_simulated_not_real_student_data,Northeastern,fashion,networking,Back Bay,weekend_morning,36,20,2,4,5,1,4,3.7,0,mid,3.044522437723423,1,0,5,0.7999999999999999
+SYN0353,synthetic_simulated_not_real_student_data,Suffolk,volunteering,creative_workshop,Roxbury,weekend_afternoon,30,10,4,3,4,0,2,5.7,0,low,2.3978952727983707,0,0,0,0.5166666666666667
+SYN0354,synthetic_simulated_not_real_student_data,Northeastern,technology,creative_workshop,Dorchester,weekend_afternoon,25,10,2,2,2,0,5,4.0,0,low,2.3978952727983707,0,0,0,0.15
+SYN0355,synthetic_simulated_not_real_student_data,Boston University,volunteering,coworking,Back Bay,weekend_afternoon,38,0,1,4,5,0,3,3.7,1,free,0.0,0,0,0,0.5333333333333333
+SYN0356,synthetic_simulated_not_real_student_data,Northeastern,fashion,creative_workshop,Fenway,weekend_morning,36,20,4,3,2,1,6,4.0,0,mid,3.044522437723423,1,0,2,0.4166666666666667
+SYN0357,synthetic_simulated_not_real_student_data,Emerson,writing,networking,Dorchester,weekday_afternoon,8,25,1,2,1,0,3,1.3,0,high,3.258096538021482,0,0,0,0.19999999999999998
+SYN0358,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,creative_workshop,Roxbury,weekday_afternoon,34,0,3,2,2,1,2,4.6,1,free,0.0,1,0,2,0.6833333333333332
+SYN0359,synthetic_simulated_not_real_student_data,Other Boston-area college,design,creative_workshop,Downtown,weekday_afternoon,23,25,3,5,4,1,4,7.1,0,high,3.258096538021482,1,0,4,0.7166666666666667
+SYN0360,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,coworking,Fenway,weekday_evening,13,10,1,3,3,0,6,3.0,0,low,2.3978952727983707,0,0,0,0.16666666666666666
+SYN0361,synthetic_simulated_not_real_student_data,Other Boston-area college,design,community_service,Downtown,weekend_afternoon,38,10,3,1,2,1,4,2.4,0,low,2.3978952727983707,1,2,2,0.5499999999999999
+SYN0362,synthetic_simulated_not_real_student_data,UMass Boston,writing,networking,Roxbury,weekend_afternoon,36,0,5,1,2,0,6,4.7,1,free,0.0,0,0,0,0.08333333333333333
+SYN0363,synthetic_simulated_not_real_student_data,Boston University,music,coworking,Back Bay,weekday_afternoon,26,0,4,4,1,0,4,5.3,1,free,0.0,0,0,0,0.13333333333333333
+SYN0364,synthetic_simulated_not_real_student_data,Emerson,design,community_service,Fenway,weekend_afternoon,9,10,5,2,4,1,6,6.6,0,low,2.3978952727983707,1,4,4,0.5833333333333334
+SYN0365,synthetic_simulated_not_real_student_data,Suffolk,writing,community_service,Downtown,weekday_afternoon,5,15,1,1,5,1,2,3.4,0,mid,2.772588722239781,1,5,5,0.9333333333333332
+SYN0366,synthetic_simulated_not_real_student_data,Northeastern,technology,community_service,Cambridge,weekend_morning,35,10,1,4,4,1,6,3.5,0,low,2.3978952727983707,1,4,4,0.5833333333333334
+SYN0367,synthetic_simulated_not_real_student_data,Boston University,photography,creative_workshop,Back Bay,weekend_evening,21,0,4,2,3,0,1,4.8,1,free,0.0,0,0,0,0.5
+SYN0368,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,creative_workshop,Cambridge,weekend_morning,25,25,2,3,5,0,2,2.5,0,high,3.258096538021482,0,0,0,0.6
+SYN0369,synthetic_simulated_not_real_student_data,Northeastern,technology,networking,Roxbury,weekend_afternoon,25,0,5,5,3,1,5,7.2,1,free,0.0,1,0,3,0.5666666666666667
+SYN0370,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,art_showcase,Downtown,weekend_evening,5,20,4,2,4,0,4,6.6,0,mid,3.044522437723423,0,0,0,0.3833333333333333
+SYN0371,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,creative_workshop,Jamaica Plain,weekend_morning,27,0,4,4,5,1,5,7.2,1,free,0.0,1,0,5,0.7333333333333334
+SYN0372,synthetic_simulated_not_real_student_data,Emerson,technology,art_showcase,Dorchester,weekend_morning,21,0,5,2,4,1,1,7.8,1,free,0.0,1,0,4,0.9166666666666666
+SYN0373,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,community_service,Roxbury,weekend_afternoon,42,5,4,4,3,1,1,6.8,0,low,1.791759469228055,1,3,3,0.8333333333333334
+SYN0374,synthetic_simulated_not_real_student_data,Boston University,writing,community_service,Fenway,weekend_evening,27,5,3,4,5,0,5,6.1,0,low,1.791759469228055,0,5,0,0.39999999999999997
+SYN0375,synthetic_simulated_not_real_student_data,UMass Boston,fashion,community_service,Back Bay,weekday_evening,21,0,3,4,1,0,4,4.7,1,free,0.0,0,1,0,0.13333333333333333
+SYN0376,synthetic_simulated_not_real_student_data,UMass Boston,design,community_service,Cambridge,weekend_evening,9,15,3,2,2,1,1,4.6,0,mid,2.772588722239781,1,2,2,0.75
+SYN0377,synthetic_simulated_not_real_student_data,Northeastern,design,coworking,Dorchester,weekend_afternoon,49,25,2,1,3,0,4,1.6,0,high,3.258096538021482,0,0,0,0.3
+SYN0378,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,local_market,Back Bay,weekend_morning,15,0,4,4,4,1,2,6.7,1,free,0.0,1,0,4,0.85
+SYN0379,synthetic_simulated_not_real_student_data,UMass Boston,design,art_showcase,Dorchester,weekend_afternoon,9,20,3,3,1,1,1,5.7,0,mid,3.044522437723423,1,0,1,0.6666666666666666
+SYN0380,synthetic_simulated_not_real_student_data,Northeastern,volunteering,art_showcase,Cambridge,weekend_morning,44,0,2,5,1,0,3,2.6,1,free,0.0,0,0,0,0.19999999999999998
+SYN0381,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,local_market,Dorchester,weekend_morning,20,10,1,5,3,1,5,2.3,0,low,2.3978952727983707,1,0,3,0.5666666666666667
+SYN0382,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,community_service,Dorchester,weekend_afternoon,37,20,2,2,2,0,1,2.2,0,mid,3.044522437723423,0,2,0,0.4166666666666667
+SYN0383,synthetic_simulated_not_real_student_data,Boston University,music,local_market,Back Bay,weekday_evening,18,5,4,3,4,1,6,3.8,0,low,1.791759469228055,1,0,4,0.5833333333333334
+SYN0384,synthetic_simulated_not_real_student_data,Other Boston-area college,design,networking,Jamaica Plain,weekday_afternoon,15,0,4,2,1,0,2,5.4,1,free,0.0,0,0,0,0.26666666666666666
+SYN0385,synthetic_simulated_not_real_student_data,Northeastern,fashion,coworking,Downtown,weekend_afternoon,23,0,3,4,4,0,4,6.1,1,free,0.0,0,0,0,0.3833333333333333
+SYN0386,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,community_service,Downtown,weekday_evening,14,10,1,4,3,0,4,2.5,0,low,2.3978952727983707,0,3,0,0.3
+SYN0387,synthetic_simulated_not_real_student_data,Boston University,writing,community_service,Jamaica Plain,weekday_evening,30,25,5,2,4,0,3,5.8,0,high,3.258096538021482,0,4,0,0.45
+SYN0388,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,art_showcase,Roxbury,weekday_afternoon,19,15,1,5,2,0,6,2.0,0,mid,2.772588722239781,0,0,0,0.08333333333333333
+SYN0389,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,local_market,Back Bay,weekend_afternoon,54,10,1,1,1,1,3,1.6,0,low,2.3978952727983707,1,0,1,0.5333333333333333
+SYN0390,synthetic_simulated_not_real_student_data,Northeastern,volunteering,coworking,Dorchester,weekday_afternoon,35,5,1,4,1,1,5,3.7,0,low,1.791759469228055,1,0,1,0.39999999999999997
+SYN0391,synthetic_simulated_not_real_student_data,Northeastern,music,creative_workshop,Roxbury,weekend_morning,9,20,2,1,3,0,2,3.4,0,mid,3.044522437723423,0,0,0,0.43333333333333335
+SYN0392,synthetic_simulated_not_real_student_data,UMass Boston,writing,coworking,Back Bay,weekday_evening,11,0,5,5,1,0,5,7.1,1,free,0.0,0,0,0,0.06666666666666665
+SYN0393,synthetic_simulated_not_real_student_data,Boston University,photography,creative_workshop,Dorchester,weekday_afternoon,46,20,2,4,4,1,5,5.2,0,mid,3.044522437723423,1,0,4,0.65
+SYN0394,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,art_showcase,Fenway,weekday_afternoon,34,15,4,2,1,0,4,4.1,0,mid,2.772588722239781,0,0,0,0.13333333333333333
+SYN0395,synthetic_simulated_not_real_student_data,Northeastern,writing,networking,Cambridge,weekday_afternoon,27,25,5,1,1,1,6,4.0,0,high,3.258096538021482,1,0,1,0.3333333333333333
+SYN0396,synthetic_simulated_not_real_student_data,Northeastern,volunteering,creative_workshop,Downtown,weekday_afternoon,15,5,2,4,4,1,3,5.7,0,low,1.791759469228055,1,0,4,0.7833333333333333
+SYN0397,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,creative_workshop,Back Bay,weekend_evening,24,0,5,5,4,1,4,7.8,1,free,0.0,1,0,4,0.7166666666666667
+SYN0398,synthetic_simulated_not_real_student_data,Suffolk,writing,creative_workshop,Roxbury,weekday_afternoon,18,25,4,1,1,0,5,3.5,0,high,3.258096538021482,0,0,0,0.06666666666666665
+SYN0399,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Cambridge,weekend_afternoon,15,10,5,1,1,0,2,5.1,0,low,2.3978952727983707,0,0,0,0.26666666666666666
+SYN0400,synthetic_simulated_not_real_student_data,Boston University,volunteering,local_market,Fenway,weekend_afternoon,27,20,5,5,3,1,2,6.1,0,mid,3.044522437723423,1,0,3,0.7666666666666666
+SYN0401,synthetic_simulated_not_real_student_data,Suffolk,music,networking,Roxbury,weekday_afternoon,21,0,3,1,1,0,1,4.3,1,free,0.0,0,0,0,0.3333333333333333
+SYN0402,synthetic_simulated_not_real_student_data,Northeastern,fashion,community_service,Cambridge,weekday_evening,29,25,4,3,4,1,2,4.0,0,high,3.258096538021482,1,4,4,0.85
+SYN0403,synthetic_simulated_not_real_student_data,Emerson,technology,community_service,Roxbury,weekend_evening,25,0,1,3,3,1,4,3.7,1,free,0.0,1,3,3,0.6333333333333333
+SYN0404,synthetic_simulated_not_real_student_data,Suffolk,technology,creative_workshop,Roxbury,weekend_evening,7,20,2,2,1,1,1,2.1,0,mid,3.044522437723423,1,0,1,0.6666666666666666
+SYN0405,synthetic_simulated_not_real_student_data,Boston University,fashion,creative_workshop,Dorchester,weekend_morning,8,0,3,2,5,0,5,4.2,1,free,0.0,0,0,0,0.39999999999999997
+SYN0406,synthetic_simulated_not_real_student_data,UMass Boston,music,coworking,Fenway,weekend_morning,22,15,3,4,3,1,5,5.6,0,mid,2.772588722239781,1,0,3,0.5666666666666667
+SYN0407,synthetic_simulated_not_real_student_data,Emerson,design,community_service,Jamaica Plain,weekday_afternoon,20,5,1,1,1,0,1,1.8,0,low,1.791759469228055,0,1,0,0.3333333333333333
+SYN0408,synthetic_simulated_not_real_student_data,Emerson,writing,art_showcase,Dorchester,weekend_morning,12,0,3,3,4,0,5,6.1,1,free,0.0,0,0,0,0.31666666666666665
+SYN0409,synthetic_simulated_not_real_student_data,Suffolk,volunteering,networking,Dorchester,weekend_evening,26,25,5,3,1,0,1,4.0,0,high,3.258096538021482,0,0,0,0.3333333333333333
+SYN0410,synthetic_simulated_not_real_student_data,Northeastern,design,community_service,Jamaica Plain,weekend_evening,9,0,5,1,2,0,1,7.2,1,free,0.0,0,2,0,0.4166666666666667
+SYN0411,synthetic_simulated_not_real_student_data,UMass Boston,music,coworking,Cambridge,weekend_evening,31,20,3,4,3,0,1,3.2,0,mid,3.044522437723423,0,0,0,0.5
+SYN0412,synthetic_simulated_not_real_student_data,UMass Boston,writing,creative_workshop,Cambridge,weekday_evening,28,25,4,3,1,1,5,2.5,0,high,3.258096538021482,1,0,1,0.39999999999999997
+SYN0413,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,networking,Dorchester,weekend_evening,24,10,1,2,3,1,2,3.5,0,low,2.3978952727983707,1,0,3,0.7666666666666666
+SYN0414,synthetic_simulated_not_real_student_data,Northeastern,photography,community_service,Roxbury,weekday_evening,20,10,5,5,5,0,4,8.2,0,low,2.3978952727983707,0,5,0,0.4666666666666666
+SYN0415,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,creative_workshop,Roxbury,weekday_afternoon,24,5,5,4,1,1,4,5.4,0,low,1.791759469228055,1,0,1,0.4666666666666666
+SYN0416,synthetic_simulated_not_real_student_data,Suffolk,music,creative_workshop,Back Bay,weekday_afternoon,11,0,2,2,2,0,3,3.4,1,free,0.0,0,0,0,0.2833333333333333
+SYN0417,synthetic_simulated_not_real_student_data,Suffolk,technology,art_showcase,Roxbury,weekend_afternoon,40,0,2,2,5,1,4,5.2,1,free,0.0,1,0,5,0.7999999999999999
+SYN0418,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,art_showcase,Fenway,weekend_afternoon,28,0,1,3,3,1,1,4.5,1,free,0.0,1,0,3,0.8333333333333334
+SYN0419,synthetic_simulated_not_real_student_data,UMass Boston,photography,networking,Cambridge,weekend_morning,26,15,3,5,2,0,6,4.7,0,mid,2.772588722239781,0,0,0,0.08333333333333333
+SYN0420,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,coworking,Downtown,weekend_morning,33,10,5,4,5,1,6,6.9,0,low,2.3978952727983707,1,0,5,0.6666666666666666
+SYN0421,synthetic_simulated_not_real_student_data,Northeastern,fashion,creative_workshop,Fenway,weekend_afternoon,35,15,2,1,5,1,6,3.9,0,mid,2.772588722239781,1,0,5,0.6666666666666666
+SYN0422,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,art_showcase,Back Bay,weekend_afternoon,34,10,3,5,3,1,6,4.6,0,low,2.3978952727983707,1,0,3,0.5
+SYN0423,synthetic_simulated_not_real_student_data,Boston University,writing,networking,Fenway,weekday_evening,24,15,4,1,5,1,1,5.3,0,mid,2.772588722239781,1,0,5,1.0
+SYN0424,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,community_service,Downtown,weekday_evening,5,0,4,4,1,0,6,5.7,1,free,0.0,0,1,0,0.0
+SYN0425,synthetic_simulated_not_real_student_data,Suffolk,design,art_showcase,Dorchester,weekend_morning,27,0,4,3,5,0,6,5.9,1,free,0.0,0,0,0,0.3333333333333333
+SYN0426,synthetic_simulated_not_real_student_data,Boston University,design,art_showcase,Roxbury,weekend_morning,5,5,4,2,1,0,4,3.7,0,low,1.791759469228055,0,0,0,0.13333333333333333
+SYN0427,synthetic_simulated_not_real_student_data,Northeastern,design,creative_workshop,Downtown,weekend_morning,27,20,1,1,5,0,3,2.6,0,mid,3.044522437723423,0,0,0,0.5333333333333333
+SYN0428,synthetic_simulated_not_real_student_data,Suffolk,fashion,art_showcase,Downtown,weekend_afternoon,21,25,1,5,5,1,4,3.8,0,high,3.258096538021482,1,0,5,0.7999999999999999
+SYN0429,synthetic_simulated_not_real_student_data,UMass Boston,photography,coworking,Downtown,weekend_afternoon,13,0,1,5,1,0,5,4.9,1,free,0.0,0,0,0,0.06666666666666665
+SYN0430,synthetic_simulated_not_real_student_data,Boston University,design,creative_workshop,Fenway,weekday_evening,24,0,1,4,2,1,2,2.8,1,free,0.0,1,0,2,0.6833333333333332
+SYN0431,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,networking,Back Bay,weekend_morning,32,5,2,3,4,1,3,2.7,0,low,1.791759469228055,1,0,4,0.7833333333333333
+SYN0432,synthetic_simulated_not_real_student_data,Other Boston-area college,design,coworking,Fenway,weekend_morning,16,0,1,4,5,1,4,5.4,1,free,0.0,1,0,5,0.7999999999999999
+SYN0433,synthetic_simulated_not_real_student_data,Boston University,fashion,art_showcase,Fenway,weekend_afternoon,30,10,2,3,5,1,1,2.8,0,low,2.3978952727983707,1,0,5,1.0
+SYN0434,synthetic_simulated_not_real_student_data,Emerson,volunteering,creative_workshop,Downtown,weekend_evening,11,15,2,4,3,0,6,3.7,0,mid,2.772588722239781,0,0,0,0.16666666666666666
+SYN0435,synthetic_simulated_not_real_student_data,Emerson,technology,creative_workshop,Downtown,weekend_afternoon,37,0,4,3,3,0,5,5.1,1,free,0.0,0,0,0,0.2333333333333333
+SYN0436,synthetic_simulated_not_real_student_data,Northeastern,design,coworking,Downtown,weekend_afternoon,5,0,3,5,5,1,5,5.4,1,free,0.0,1,0,5,0.7333333333333334
+SYN0437,synthetic_simulated_not_real_student_data,Northeastern,writing,art_showcase,Cambridge,weekend_afternoon,21,10,5,5,3,0,3,6.3,0,low,2.3978952727983707,0,0,0,0.3666666666666667
+SYN0438,synthetic_simulated_not_real_student_data,Suffolk,technology,creative_workshop,Jamaica Plain,weekday_afternoon,19,25,3,3,5,0,1,3.3,0,high,3.258096538021482,0,0,0,0.6666666666666666
+SYN0439,synthetic_simulated_not_real_student_data,UMass Boston,photography,art_showcase,Fenway,weekend_afternoon,42,15,5,3,2,0,2,4.5,0,mid,2.772588722239781,0,0,0,0.35000000000000003
+SYN0440,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,coworking,Back Bay,weekday_evening,9,15,3,3,5,0,6,5.9,0,mid,2.772588722239781,0,0,0,0.3333333333333333
+SYN0441,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,coworking,Downtown,weekend_morning,6,0,2,3,1,0,5,2.3,1,free,0.0,0,0,0,0.06666666666666665
+SYN0442,synthetic_simulated_not_real_student_data,Other Boston-area college,volunteering,art_showcase,Fenway,weekend_morning,38,10,1,3,5,1,2,4.6,0,low,2.3978952727983707,1,0,5,0.9333333333333332
+SYN0443,synthetic_simulated_not_real_student_data,Boston University,music,coworking,Dorchester,weekend_morning,33,0,1,2,5,1,1,3.1,1,free,0.0,1,0,5,1.0
+SYN0444,synthetic_simulated_not_real_student_data,Suffolk,technology,community_service,Downtown,weekday_evening,42,5,4,2,1,1,1,4.2,0,low,1.791759469228055,1,1,1,0.6666666666666666
+SYN0445,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,networking,Downtown,weekend_afternoon,32,25,5,5,1,0,3,4.5,0,high,3.258096538021482,0,0,0,0.19999999999999998
+SYN0446,synthetic_simulated_not_real_student_data,Northeastern,design,local_market,Dorchester,weekday_evening,31,5,2,1,3,0,6,3.0,0,low,1.791759469228055,0,0,0,0.16666666666666666
+SYN0447,synthetic_simulated_not_real_student_data,Suffolk,fashion,community_service,Roxbury,weekday_afternoon,25,25,3,2,4,1,1,4.1,0,high,3.258096538021482,1,4,4,0.9166666666666666
+SYN0448,synthetic_simulated_not_real_student_data,Northeastern,fashion,creative_workshop,Roxbury,weekday_evening,29,5,3,2,1,1,6,4.8,0,low,1.791759469228055,1,0,1,0.3333333333333333
+SYN0449,synthetic_simulated_not_real_student_data,Boston University,volunteering,community_service,Fenway,weekday_afternoon,30,0,3,5,2,1,2,6.0,1,free,0.0,1,2,2,0.6833333333333332
+SYN0450,synthetic_simulated_not_real_student_data,Other Boston-area college,fashion,art_showcase,Fenway,weekend_morning,23,0,5,4,1,1,2,7.6,1,free,0.0,1,0,1,0.6
+SYN0451,synthetic_simulated_not_real_student_data,Other Boston-area college,writing,art_showcase,Cambridge,weekend_morning,16,0,3,1,1,1,2,5.1,1,free,0.0,1,0,1,0.6
+SYN0452,synthetic_simulated_not_real_student_data,Emerson,volunteering,community_service,Downtown,weekday_afternoon,31,15,3,1,4,0,5,2.3,0,mid,2.772588722239781,0,4,0,0.31666666666666665
+SYN0453,synthetic_simulated_not_real_student_data,Suffolk,fashion,community_service,Back Bay,weekend_evening,33,25,5,2,3,0,2,5.3,0,high,3.258096538021482,0,3,0,0.43333333333333335
+SYN0454,synthetic_simulated_not_real_student_data,UMass Boston,writing,creative_workshop,Jamaica Plain,weekend_morning,24,10,2,1,5,0,6,3.5,0,low,2.3978952727983707,0,0,0,0.3333333333333333
+SYN0455,synthetic_simulated_not_real_student_data,Boston University,fashion,community_service,Roxbury,weekend_morning,49,0,5,1,1,0,4,5.9,1,free,0.0,0,1,0,0.13333333333333333
+SYN0456,synthetic_simulated_not_real_student_data,Emerson,writing,community_service,Dorchester,weekday_evening,18,20,2,5,5,0,4,4.8,0,mid,3.044522437723423,0,5,0,0.4666666666666666
+SYN0457,synthetic_simulated_not_real_student_data,UMass Boston,technology,local_market,Dorchester,weekday_afternoon,18,15,1,3,4,0,1,5.6,0,mid,2.772588722239781,0,0,0,0.5833333333333334
+SYN0458,synthetic_simulated_not_real_student_data,Other Boston-area college,music,art_showcase,Fenway,weekday_evening,34,0,4,4,4,0,4,5.5,1,free,0.0,0,0,0,0.3833333333333333
+SYN0459,synthetic_simulated_not_real_student_data,Suffolk,technology,community_service,Downtown,weekday_afternoon,19,0,4,3,1,1,2,6.1,1,free,0.0,1,1,1,0.6
+SYN0460,synthetic_simulated_not_real_student_data,Boston University,technology,creative_workshop,Dorchester,weekday_afternoon,21,0,5,4,5,0,5,7.7,1,free,0.0,0,0,0,0.39999999999999997
+SYN0461,synthetic_simulated_not_real_student_data,Boston University,fashion,coworking,Downtown,weekend_afternoon,13,25,2,5,3,1,5,5.0,0,high,3.258096538021482,1,0,3,0.5666666666666667
+SYN0462,synthetic_simulated_not_real_student_data,Suffolk,volunteering,art_showcase,Back Bay,weekend_morning,9,0,4,3,4,1,5,5.0,1,free,0.0,1,0,4,0.65
+SYN0463,synthetic_simulated_not_real_student_data,Northeastern,volunteering,art_showcase,Dorchester,weekend_afternoon,17,0,3,5,4,1,4,5.6,1,free,0.0,1,0,4,0.7166666666666667
+SYN0464,synthetic_simulated_not_real_student_data,Other Boston-area college,entrepreneurship,community_service,Back Bay,weekend_afternoon,28,20,4,3,3,0,2,4.9,0,mid,3.044522437723423,0,3,0,0.43333333333333335
+SYN0465,synthetic_simulated_not_real_student_data,Emerson,writing,creative_workshop,Dorchester,weekend_afternoon,25,20,4,5,3,0,2,5.4,0,mid,3.044522437723423,0,0,0,0.43333333333333335
+SYN0466,synthetic_simulated_not_real_student_data,Emerson,entrepreneurship,networking,Roxbury,weekend_afternoon,11,0,3,2,2,0,2,5.0,1,free,0.0,0,0,0,0.35000000000000003
+SYN0467,synthetic_simulated_not_real_student_data,UMass Boston,fashion,coworking,Back Bay,weekday_evening,48,0,5,2,3,0,5,4.9,1,free,0.0,0,0,0,0.2333333333333333
+SYN0468,synthetic_simulated_not_real_student_data,Suffolk,fashion,art_showcase,Fenway,weekend_afternoon,19,0,3,5,4,1,5,6.2,1,free,0.0,1,0,4,0.65
+SYN0469,synthetic_simulated_not_real_student_data,Suffolk,music,art_showcase,Downtown,weekday_afternoon,23,0,4,5,3,0,6,4.8,1,free,0.0,0,0,0,0.16666666666666666
+SYN0470,synthetic_simulated_not_real_student_data,Northeastern,design,networking,Downtown,weekend_evening,10,10,5,1,4,0,5,4.8,0,low,2.3978952727983707,0,0,0,0.31666666666666665
+SYN0471,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,creative_workshop,Cambridge,weekday_afternoon,32,0,3,4,3,1,5,5.5,1,free,0.0,1,0,3,0.5666666666666667
+SYN0472,synthetic_simulated_not_real_student_data,Northeastern,photography,creative_workshop,Roxbury,weekday_evening,14,10,2,1,1,0,1,3.2,0,low,2.3978952727983707,0,0,0,0.3333333333333333
+SYN0473,synthetic_simulated_not_real_student_data,Emerson,writing,coworking,Roxbury,weekend_afternoon,35,20,5,1,2,1,1,5.3,0,mid,3.044522437723423,1,0,2,0.75
+SYN0474,synthetic_simulated_not_real_student_data,Suffolk,music,networking,Dorchester,weekday_evening,33,20,4,5,3,1,4,4.7,0,mid,3.044522437723423,1,0,3,0.6333333333333333
+SYN0475,synthetic_simulated_not_real_student_data,UMass Boston,volunteering,local_market,Fenway,weekend_morning,19,0,5,2,4,1,4,7.1,1,free,0.0,1,0,4,0.7166666666666667
+SYN0476,synthetic_simulated_not_real_student_data,Emerson,design,networking,Back Bay,weekend_morning,35,0,4,3,5,1,1,5.9,1,free,0.0,1,0,5,1.0
+SYN0477,synthetic_simulated_not_real_student_data,Northeastern,design,art_showcase,Jamaica Plain,weekend_afternoon,19,0,1,4,5,1,4,3.5,1,free,0.0,1,0,5,0.7999999999999999
+SYN0478,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,community_service,Dorchester,weekday_evening,34,10,5,2,5,0,3,6.8,0,low,2.3978952727983707,0,5,0,0.5333333333333333
+SYN0479,synthetic_simulated_not_real_student_data,Northeastern,music,local_market,Roxbury,weekend_morning,34,5,1,1,5,0,1,3.8,0,low,1.791759469228055,0,0,0,0.6666666666666666
+SYN0480,synthetic_simulated_not_real_student_data,Suffolk,photography,coworking,Back Bay,weekday_evening,30,0,1,2,4,1,3,2.0,1,free,0.0,1,0,4,0.7833333333333333
+SYN0481,synthetic_simulated_not_real_student_data,Northeastern,writing,creative_workshop,Cambridge,weekday_afternoon,10,15,2,3,1,0,6,2.2,0,mid,2.772588722239781,0,0,0,0.0
+SYN0482,synthetic_simulated_not_real_student_data,Suffolk,writing,art_showcase,Back Bay,weekend_evening,33,25,2,3,2,1,1,1.6,0,high,3.258096538021482,1,0,2,0.75
+SYN0483,synthetic_simulated_not_real_student_data,Other Boston-area college,photography,coworking,Fenway,weekday_evening,21,20,3,4,4,1,4,5.7,0,mid,3.044522437723423,1,0,4,0.7166666666666667
+SYN0484,synthetic_simulated_not_real_student_data,Emerson,technology,community_service,Dorchester,weekend_morning,23,10,3,1,4,0,5,3.4,0,low,2.3978952727983707,0,4,0,0.31666666666666665
+SYN0485,synthetic_simulated_not_real_student_data,Emerson,fashion,community_service,Back Bay,weekend_afternoon,16,5,3,5,4,1,5,5.4,0,low,1.791759469228055,1,4,4,0.65
+SYN0486,synthetic_simulated_not_real_student_data,Suffolk,photography,coworking,Roxbury,weekday_evening,22,0,3,2,5,1,4,5.6,1,free,0.0,1,0,5,0.7999999999999999
+SYN0487,synthetic_simulated_not_real_student_data,Suffolk,writing,creative_workshop,Jamaica Plain,weekend_evening,50,0,1,5,2,0,4,2.9,1,free,0.0,0,0,0,0.21666666666666667
+SYN0488,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,creative_workshop,Dorchester,weekend_evening,22,20,2,3,4,1,1,5.9,0,mid,3.044522437723423,1,0,4,0.9166666666666666
+SYN0489,synthetic_simulated_not_real_student_data,Northeastern,photography,community_service,Fenway,weekend_afternoon,57,20,2,1,5,0,2,1.9,0,mid,3.044522437723423,0,5,0,0.6
+SYN0490,synthetic_simulated_not_real_student_data,Emerson,music,creative_workshop,Roxbury,weekend_evening,5,15,5,1,5,1,2,7.0,0,mid,2.772588722239781,1,0,5,0.9333333333333332
+SYN0491,synthetic_simulated_not_real_student_data,Other Boston-area college,music,coworking,Cambridge,weekend_afternoon,44,0,2,3,1,1,6,4.3,1,free,0.0,1,0,1,0.3333333333333333
+SYN0492,synthetic_simulated_not_real_student_data,Suffolk,photography,community_service,Back Bay,weekday_afternoon,12,25,5,2,2,0,1,5.3,0,high,3.258096538021482,0,2,0,0.4166666666666667
+SYN0493,synthetic_simulated_not_real_student_data,Suffolk,fashion,creative_workshop,Downtown,weekend_evening,28,25,4,3,3,0,1,5.6,0,high,3.258096538021482,0,0,0,0.5
+SYN0494,synthetic_simulated_not_real_student_data,UMass Boston,technology,creative_workshop,Downtown,weekend_morning,20,0,3,1,1,0,4,2.2,1,free,0.0,0,0,0,0.13333333333333333
+SYN0495,synthetic_simulated_not_real_student_data,Suffolk,photography,creative_workshop,Back Bay,weekday_evening,5,0,3,5,5,1,6,6.7,1,free,0.0,1,0,5,0.6666666666666666
+SYN0496,synthetic_simulated_not_real_student_data,UMass Boston,entrepreneurship,community_service,Dorchester,weekday_evening,22,15,5,1,4,0,3,4.3,0,mid,2.772588722239781,0,4,0,0.45
+SYN0497,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,community_service,Jamaica Plain,weekend_evening,54,0,3,3,1,0,3,3.0,1,free,0.0,0,1,0,0.19999999999999998
+SYN0498,synthetic_simulated_not_real_student_data,UMass Boston,design,art_showcase,Fenway,weekday_evening,29,0,3,5,3,0,4,5.5,1,free,0.0,0,0,0,0.3
+SYN0499,synthetic_simulated_not_real_student_data,Northeastern,entrepreneurship,networking,Jamaica Plain,weekday_afternoon,7,25,5,2,3,0,2,6.0,0,high,3.258096538021482,0,0,0,0.43333333333333335
+SYN0500,synthetic_simulated_not_real_student_data,Boston University,entrepreneurship,coworking,Back Bay,weekend_afternoon,27,10,4,3,2,1,4,6.1,0,low,2.3978952727983707,1,0,2,0.5499999999999999

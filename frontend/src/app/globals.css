@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14212b;
+  --fog: #e8efe8;
+  --leaf: #1f6f5b;
+  --leaf-deep: #0f3d34;
+  --sand: #f3efe6;
+  --clay: #c45c26;
+  --line: #c5d0c8;
+  --background: var(--sand);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-fog: var(--fog);
+  --color-leaf: var(--leaf);
+  --color-leaf-deep: var(--leaf-deep);
+  --color-sand: var(--sand);
+  --color-clay: var(--clay);
+  --color-line: var(--line);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, #d7e8df 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #f0e0d2 0%, transparent 50%),
+    var(--sand);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.55s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}
