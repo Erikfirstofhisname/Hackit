@@ -1,65 +1,76 @@
 @import "tailwindcss";
 
+/* ===========================================================
+   LOKA design tokens — lavender / black (the reference look).
+   (Erik's green/sand console lives at /models and sets its own
+   colors locally; these are the app-wide defaults now.)
+   =========================================================== */
 :root {
-  --ink: #14212b;
-  --fog: #e8efe8;
-  --leaf: #1f6f5b;
-  --leaf-deep: #0f3d34;
-  --sand: #f3efe6;
-  --clay: #c45c26;
-  --line: #c5d0c8;
-  --background: var(--sand);
+  --lav: #c9b6f5;        /* page background */
+  --lav-deep: #b49cf0;
+  --ink: #141019;        /* near-black display text */
+  --card: #1a1620;       /* dark card body */
+  --cream: #f6f1e7;      /* card inner panel */
+  --accent: #2f6df0;     /* blue action */
+  --accent2: #e85df0;    /* magenta highlight */
+  --pick: #d9c6ff;       /* selected tile */
+  --line: #141019;
+  --background: var(--lav);
   --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-lav: var(--lav);
+  --color-lav-deep: var(--lav-deep);
   --color-ink: var(--ink);
-  --color-fog: var(--fog);
-  --color-leaf: var(--leaf);
-  --color-leaf-deep: var(--leaf-deep);
-  --color-sand: var(--sand);
-  --color-clay: var(--clay);
+  --color-card: var(--card);
+  --color-cream: var(--cream);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+  --color-pick: var(--pick);
   --color-line: var(--line);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
 }
 
 body {
-  background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, #d7e8df 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, #f0e0d2 0%, transparent 50%),
-    var(--sand);
+  background: var(--lav);
   color: var(--ink);
   min-height: 100vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes pulse-soft {
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
 }
+.animate-rise { animation: rise 0.45s ease-out both; }
+.animate-pulse-soft { animation: pulse-soft 1.4s ease-in-out infinite; }
 
-.animate-rise {
-  animation: rise 0.55s ease-out both;
+/* nav pill buttons (reference style) */
+.pill {
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
+.pill.solid { background: var(--accent); color: #fff; }
 
-.animate-pulse-soft {
-  animation: pulse-soft 1.4s ease-in-out infinite;
+/* reduced-motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise, .animate-pulse-soft { animation: none !important; }
 }

@@ -1,535 +1,436 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import {
+  CREATE_KEY, Community, LS_KEY, Opportunity, Person, Profile, SCHOOLS, Seed,
+  icon, isForYou, linkForComm, linkForOpp, linkForPerson, loadData, pal, personalScore,
+} from "./loka";
 
-type ModelInfo = {
-  id: string;
-  name: string;
-  task: string;
-  learner: string;
-  default_prompt: string;
-};
+type Feed = "foryou" | "popular";
+type Sec = "people" | "opportunities" | "communities";
+type AnyItem = Person | Opportunity | Community;
 
-type RankRow = {
-  rank: number;
-  record_id: string;
-  campus_group: string;
-  primary_interest: string;
-  event_type: string;
-  event_neighborhood: string;
-  is_free: number;
-  simulated_interest_rating_1_to_10: number;
-  ensemble_score?: number;
-  tier?: string;
-  tier_rank?: number;
-  [key: string]: string | number | undefined;
-};
-
-type TierSummary = {
-  tier: string;
-  tier_rank: number;
-  count: number;
-  mean_ensemble_score: number;
-};
-
-type PerModel = {
-  id: string;
-  name: string;
-  task: string;
-  learner: string;
-  prompt: string;
-  metrics: Record<string, number>;
-  top10: RankRow[];
-};
-
-type RunResult = {
-  n_rows: number;
-  n_folds: number;
-  models_run: string[];
-  tier_summary: TierSummary[];
-  top10: RankRow[];
-  per_model: Record<string, PerModel>;
-};
-
-/** Popup choices per model (no free typing). */
-const MODEL_OPTIONS: Record<string, { label: string; value: string }[]> = {
-  interest_rating: [
-    { label: "Any interest level", value: "Predict interest rating 1–10 (any level)." },
-    { label: "Prioritize high (7+)", value: "Prioritize students/events with high interest (7+)." },
-    { label: "Prioritize mid (4–6)", value: "Focus on mid-range interest fits (4–6)." },
-    { label: "Surface low (<4)", value: "Flag low-interest mismatches (below 4)." },
-  ],
-  high_interest: [
-    { label: "Engage if rating ≥ 6", value: "Binary: engage when predicted rating ≥ 6." },
-    { label: "Stricter (≥ 7)", value: "Binary: engage when predicted rating ≥ 7." },
-    { label: "Looser (≥ 5)", value: "Binary: engage when predicted rating ≥ 5." },
-  ],
-  event_type: [
-    { label: "Any event type", value: "Predict best-fit event type (all classes)." },
-    { label: "Creative workshop", value: "Prefer creative_workshop." },
-    { label: "Art showcase", value: "Prefer art_showcase." },
-    { label: "Community service", value: "Prefer community_service." },
-    { label: "Networking", value: "Prefer networking." },
-    { label: "Coworking", value: "Prefer coworking." },
-    { label: "Local market", value: "Prefer local_market." },
-  ],
-  preferred_time: [
-    { label: "Any time slot", value: "Predict preferred time (all slots)." },
-    { label: "Weekend afternoon", value: "Prefer weekend_afternoon." },
-    { label: "Weekend evening", value: "Prefer weekend_evening." },
-    { label: "Weekend morning", value: "Prefer weekend_morning." },
-    { label: "Weekday afternoon", value: "Prefer weekday_afternoon." },
-    { label: "Weekday evening", value: "Prefer weekday_evening." },
-  ],
-  neighborhood: [
-    { label: "Any neighborhood", value: "Predict neighborhood preference (all areas)." },
-    { label: "Back Bay", value: "Prefer Back Bay." },
-    { label: "Downtown", value: "Prefer Downtown." },
-    { label: "Fenway", value: "Prefer Fenway." },
-    { label: "Cambridge", value: "Prefer Cambridge." },
-    { label: "Roxbury", value: "Prefer Roxbury." },
-    { label: "Dorchester", value: "Prefer Dorchester." },
-    { label: "Jamaica Plain", value: "Prefer Jamaica Plain." },
-  ],
-  cost_band: [
-    { label: "Any cost band", value: "Predict cost-band tolerance (free/low/mid/high)." },
-    { label: "Free only", value: "Prefer free events." },
-    { label: "Low (≤ $10)", value: "Prefer low cost band." },
-    { label: "Mid ($11–20)", value: "Prefer mid cost band." },
-    { label: "High ($20+)", value: "Prefer high cost band." },
-  ],
-  cross_campus: [
-    { label: "Either", value: "Predict cross-campus affinity (yes/no)." },
-    { label: "Prefer cross-campus", value: "Prefer cross-campus events." },
-    { label: "Same-campus only", value: "Prefer same-campus events." },
-  ],
-  civic_affinity: [
-    { label: "Any civic fit", value: "Predict civic / community-service affinity." },
-    { label: "Strong civic fit", value: "Prioritize strong civic_fit scores." },
-    { label: "Community service focus", value: "Prioritize community_service civic match." },
-    { label: "Moderate only", value: "Focus on moderate civic affinity." },
-  ],
-};
-
-function optionLabel(modelId: string, promptValue: string): string {
-  const opts = MODEL_OPTIONS[modelId] ?? [];
-  return opts.find((o) => o.value === promptValue)?.label ?? "Choose option";
-}
+const GOALS = [
+  { v: "learn", label: "📚 Looking to learn" },
+  { v: "mentors", label: "🧭 Find peer mentors" },
+  { v: "people", label: "👋 Find people like me" },
+  { v: "building", label: "🔨 Building something" },
+  { v: "mentor", label: "⭐ Happy to mentor" },
+];
 
 export default function Home() {
-  const [models, setModels] = useState<ModelInfo[]>([]);
-  const [prompts, setPrompts] = useState<Record<string, string>>({});
-  const [selected, setSelected] = useState<Record<string, boolean>>({});
-  const [openPopup, setOpenPopup] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<RunResult | null>(null);
-  const [showPerModel, setShowPerModel] = useState(false);
-  const [activeModel, setActiveModel] = useState<string | null>(null);
+  const [data, setData] = useState<Seed | null>(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [feed, setFeed] = useState<Feed>("foryou");
+  const [sec, setSec] = useState<Sec>("people");
+  const [detail, setDetail] = useState<{ sec: Sec; id: string } | null>(null);
+  const [creating, setCreating] = useState(false);
+
+  // onboarding draft
+  const [name, setName] = useState("");
+  const [interests, setInterests] = useState<string[]>([]);
+  const [campus, setCampus] = useState<string>("");
+  const [goal, setGoal] = useState<string>("");
+
   useEffect(() => {
-    fetch("/api/models")
-      .then((r) => {
-        if (!r.ok) throw new Error("API unavailable — start the FastAPI backend.");
-        return r.json();
-      })
-      .then((data: { models: ModelInfo[] }) => {
-        setModels(data.models);
-        const p: Record<string, string> = {};
-        const s: Record<string, boolean> = {};
-        data.models.forEach((m) => {
-          const first = MODEL_OPTIONS[m.id]?.[0];
-          p[m.id] = first?.value ?? m.default_prompt;
-          s[m.id] = true;
-        });
-        setPrompts(p);
-        setSelected(s);
-        if (data.models[0]) setActiveModel(data.models[0].id);
-      })
-      .catch((e: Error) => setError(e.message));
+    loadData().then((d) => {
+      // merge any user-created items saved on this device
+      try {
+        const saved = JSON.parse(localStorage.getItem(CREATE_KEY) || "null");
+        if (saved) {
+          (["people", "opportunities", "communities"] as Sec[]).forEach((k) => {
+            (saved[k] || []).forEach((it: AnyItem) => {
+              if (!(d[k] as AnyItem[]).some((x) => String((x as { id: string }).id) === String((it as { id: string }).id)))
+                (d[k] as AnyItem[]).unshift(it);
+            });
+          });
+        }
+      } catch { /* ignore */ }
+      setData(d);
+    });
+    const p = localStorage.getItem(LS_KEY);
+    if (p) setProfile(JSON.parse(p));
   }, []);
 
-  useEffect(() => {
-    if (!openPopup) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpenPopup(null);
+  const allInterests = useMemo(() => {
+    if (!data) return [];
+    return [...new Set(data.people.map((p) => p.interest).concat(data.communities.map((c) => c.interest)))]
+      .filter(Boolean).sort();
+  }, [data]);
+
+  const schoolNames = useMemo(() => {
+    const names = SCHOOLS.map((s) => s[0]);
+    const extra = data ? data.people.map((p) => p.campus) : [];
+    return [...new Set(names.concat(extra))].filter(Boolean).sort();
+  }, [data]);
+
+  if (!data) return <div className="p-24 text-center text-xl font-extrabold">Loading LOKA…</div>;
+
+  /* ---------------- ONBOARDING ---------------- */
+  if (!profile) {
+    const ready = name.trim() && interests.length > 0 && campus && goal;
+    const toggle = (it: string) =>
+      setInterests((cur) => (cur.includes(it) ? cur.filter((x) => x !== it) : [...cur, it]));
+    const start = () => {
+      const prof: Profile = { name: name.trim() || "friend", interests, campus: campus || null, goal: goal || null };
+      localStorage.setItem(LS_KEY, JSON.stringify(prof));
+      setProfile(prof);
     };
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [openPopup]);
-
-  const popupModel = models.find((m) => m.id === openPopup) ?? null;
-  const popupOpts = openPopup ? MODEL_OPTIONS[openPopup] ?? [] : [];
-
-  const run = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    setOpenPopup(null);
-    try {
-      const model_ids = Object.entries(selected)
-        .filter(([, on]) => on)
-        .map(([id]) => id);
-      if (!model_ids.length) throw new Error("Select at least one model.");
-
-      const res = await fetch("/api/run", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model_ids, prompts, top_n: 10, n_tiers: 3 }),
-      });
-      if (!res.ok) {
-        const text = await res.text();
-        let msg = text || `Run failed (${res.status})`;
-        try {
-          const j = JSON.parse(text) as { detail?: string; error?: string; hint?: string };
-          msg = j.detail || j.error || msg;
-          if (j.hint) msg = `${msg} — ${j.hint}`;
-        } catch {
-          /* plain text */
-        }
-        throw new Error(msg);
-      }
-      const data: RunResult = await res.json();
-      setResult(data);
-      setShowPerModel(false);
-      if (data.models_run[0]) setActiveModel(data.models_run[0]);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Run failed");
-    } finally {
-      setLoading(false);
-    }
-  }, [prompts, selected]);
-
-  return (
-    <main className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8">
-      <header className="animate-rise mb-14 max-w-2xl">
-        <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-leaf uppercase">
-          Boston · creative · civic
-        </p>
-        <h1 className="font-[family-name:var(--font-display)] text-6xl leading-[0.95] tracking-tight text-ink sm:text-7xl">
-          Loka
-        </h1>
-        <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-          Eight model boxes — open each popup to pick an option, then train and
-          rank with GMM tiers.
-        </p>
-      </header>
-
-      <section className="mb-10">
-        <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl text-ink">
-            Models
-          </h2>
-          <button
-            type="button"
-            onClick={run}
-            disabled={loading || !models.length}
-            className="rounded-md bg-leaf-deep px-5 py-2.5 text-sm font-semibold text-sand transition hover:bg-leaf disabled:opacity-50"
-          >
-            {loading ? (
-              <span className="animate-pulse-soft">
-                Training & ranking… (can take up to ~1 min)
-              </span>
-            ) : (
-              "Train, test & rank"
-            )}
-          </button>
-        </div>
-
-        {error && (
-          <p className="mb-4 rounded-md border border-clay/40 bg-clay/10 px-4 py-3 text-sm text-clay">
-            {error}
+    return (
+      <Shell>
+        <div className="animate-rise mx-auto mt-2 max-w-[720px] rounded-[30px] border-[3px] border-ink bg-white p-9 shadow-[8px_10px_0_rgba(0,0,0,0.3)]">
+          <h2 className="text-[40px] font-black leading-[1.02] tracking-tight">Select hobbies<br />& interests.</h2>
+          <p className="mb-5 mt-1.5 font-semibold text-[#3a3150]">
+            Pick what you&apos;re into. LOKA uses it to bridge you to the right people,
+            communities, and opportunities across Boston&apos;s campuses.
           </p>
-        )}
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {models.map((m, i) => {
-            const included = !!selected[m.id];
-            return (
-              <div
-                key={m.id}
-                className="animate-rise border border-line bg-fog/60 p-4"
-                style={{ animationDelay: `${i * 40}ms` }}
-              >
-                <div className="mb-3 flex items-start justify-between gap-3">
-                  <div>
-                    <p className="font-[family-name:var(--font-display)] text-lg text-ink">
-                      {m.name}
-                    </p>
-                    <p className="text-xs text-ink/50">
-                      {m.task} · {m.learner}
-                    </p>
-                  </div>
-                  <label className="flex items-center gap-1.5 text-xs text-ink/60">
-                    <input
-                      type="checkbox"
-                      checked={included}
-                      onChange={(e) =>
-                        setSelected((s) => ({ ...s, [m.id]: e.target.checked }))
-                      }
-                      className="size-4 accent-leaf"
-                    />
-                    Use
-                  </label>
-                </div>
+          <StepLabel>1 · Your name</StepLabel>
+          <input
+            value={name} onChange={(e) => setName(e.target.value)} maxLength={40}
+            placeholder="First name — what should LOKA call you?"
+            className="w-full rounded-2xl border-[2.5px] border-ink bg-[#f4f1fa] px-5 py-3.5 text-[17px] font-bold outline-none placeholder:font-semibold placeholder:text-[#8a7fa3]"
+          />
 
-                <button
-                  type="button"
-                  aria-haspopup="dialog"
-                  onClick={() => setOpenPopup(m.id)}
-                  className="flex w-full items-center justify-between gap-3 border border-line bg-sand/90 px-3 py-3 text-left text-ink transition hover:border-leaf/50"
-                >
-                  <span className="min-w-0">
-                    <span className="block text-xs uppercase tracking-wide text-ink/45">
-                      Selected option
-                    </span>
-                    <span className="mt-0.5 block text-base leading-snug">
-                      {optionLabel(m.id, prompts[m.id] ?? "")}
-                    </span>
-                  </span>
-                  <span className="shrink-0 text-sm font-medium text-leaf">
-                    Choose ▾
-                  </span>
+          <StepLabel>2 · Your interests (pick a few)</StepLabel>
+          <div className="grid grid-cols-3 gap-3.5">
+            {allInterests.map((it) => {
+              const on = interests.includes(it);
+              return (
+                <button key={it} onClick={() => toggle(it)}
+                  className={`flex flex-col items-center gap-2 rounded-[18px] border-[2.5px] border-ink px-3 py-[18px] text-[15px] font-extrabold ${on ? "bg-pick shadow-[3px_4px_0_rgba(0,0,0,0.25)]" : "bg-[#f4f1fa]"}`}>
+                  <span className="text-[26px] leading-none">{icon(it)}</span>{it}
                 </button>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
 
-      {popupModel && (
-        <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-ink/45 p-4 sm:items-center"
-          role="presentation"
-          onClick={() => setOpenPopup(null)}
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="loka-option-title"
-            className="animate-rise flex max-h-[85vh] w-full max-w-lg flex-col border border-line bg-sand shadow-[0_24px_80px_rgba(20,33,43,0.28)]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="border-b border-line px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-leaf">
-                Choose option
-              </p>
-              <h3
-                id="loka-option-title"
-                className="mt-1 font-[family-name:var(--font-display)] text-2xl text-ink"
-              >
-                {popupModel.name}
-              </h3>
-              <p className="mt-1 text-sm text-ink/55">
-                {popupModel.task} · {popupModel.learner}
-              </p>
-            </div>
+          <StepLabel>3 · Your school</StepLabel>
+          <div className="relative">
+            <select value={campus} onChange={(e) => setCampus(e.target.value)}
+              className="w-full appearance-none rounded-2xl border-[2.5px] border-ink bg-[#f4f1fa] px-5 py-3.5 pr-11 text-[17px] font-bold outline-none">
+              <option value="">Pick your Boston-area school…</option>
+              {schoolNames.map((n) => <option key={n} value={n}>{n}</option>)}
+            </select>
+            <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2">▾</span>
+          </div>
 
-            <ul className="flex-1 overflow-y-auto px-2 py-2" role="listbox">
-              {popupOpts.map((o) => {
-                const active = prompts[popupModel.id] === o.value;
-                return (
-                  <li key={o.value} className="px-2 py-1">
-                    <button
-                      type="button"
-                      role="option"
-                      aria-selected={active}
-                      onClick={() => {
-                        setPrompts((p) => ({
-                          ...p,
-                          [popupModel.id]: o.value,
-                        }));
-                        setSelected((s) => ({ ...s, [popupModel.id]: true }));
-                        setOpenPopup(null);
-                      }}
-                      className={`w-full rounded-sm border px-4 py-3.5 text-left transition ${
-                        active
-                          ? "border-leaf bg-fog"
-                          : "border-transparent hover:border-line hover:bg-fog/70"
-                      }`}
-                    >
-                      <span className="block text-base font-medium leading-snug text-ink">
-                        {o.label}
-                      </span>
-                      <span className="mt-1 block text-sm leading-relaxed text-ink/60">
-                        {o.value}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="border-t border-line px-5 py-3">
-              <button
-                type="button"
-                onClick={() => setOpenPopup(null)}
-                className="text-sm font-medium text-ink/60 hover:text-ink"
-              >
-                Cancel
+          <StepLabel>4 · What brings you to LOKA?</StepLabel>
+          <div className="flex flex-wrap gap-2.5">
+            {GOALS.map((g) => (
+              <button key={g.v} onClick={() => setGoal(g.v)}
+                className={`rounded-full border-[2.5px] border-ink px-[18px] py-2.5 font-bold ${goal === g.v ? "bg-pick shadow-[3px_4px_0_rgba(0,0,0,0.22)]" : "bg-[#f4f1fa]"}`}>
+                {g.label}
               </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {result && (
-        <section className="animate-rise space-y-10 border-t border-line pt-10">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h2 className="font-[family-name:var(--font-display)] text-2xl text-ink">
-                Results
-              </h2>
-              <p className="text-sm text-ink/60">
-                {result.n_rows} rows · {result.n_folds}-fold CV ·{" "}
-                {result.models_run.length} models · GMM tiers
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => setShowPerModel((v) => !v)}
-              className="border border-ink/20 px-4 py-2 text-sm font-medium text-ink hover:border-leaf hover:text-leaf"
-            >
-              {showPerModel
-                ? "Show overall top 10"
-                : "See individual model rankings"}
-            </button>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3">
-            {result.tier_summary.map((t) => (
-              <div
-                key={t.tier}
-                className="border border-line bg-fog/50 px-4 py-3"
-              >
-                <p className="font-[family-name:var(--font-display)] text-lg">
-                  {t.tier}
-                </p>
-                <p className="text-sm text-ink/60">
-                  {t.count} events · mean score{" "}
-                  {t.mean_ensemble_score.toFixed(3)}
-                </p>
-              </div>
             ))}
           </div>
 
-          {!showPerModel ? (
-            <RankTable
-              title="Top 10 — ensemble + GMM tier"
-              rows={result.top10}
-              showTier
-            />
-          ) : (
-            <div className="space-y-6">
-              <div className="max-w-sm">
-                <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-ink/50">
-                  Model rankings
-                </label>
-                <select
-                  value={activeModel ?? ""}
-                  onChange={(e) => setActiveModel(e.target.value)}
-                  className="w-full border border-line bg-sand px-3 py-2 text-sm text-ink outline-none focus:border-leaf"
-                >
-                  {result.models_run.map((id) => (
-                    <option key={id} value={id}>
-                      {result.per_model[id]?.name ?? id}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              {activeModel && result.per_model[activeModel] && (
-                <>
-                  <MetricsBlock model={result.per_model[activeModel]} />
-                  <RankTable
-                    title={`Top 10 — ${result.per_model[activeModel].name}`}
-                    rows={result.per_model[activeModel].top10}
-                    scoreKey={`score_${activeModel}`}
-                  />
-                </>
-              )}
-            </div>
-          )}
-        </section>
-      )}
-    </main>
+          <div className="mt-[30px] flex justify-center">
+            <button disabled={!ready} onClick={start}
+              className="inline-flex items-center gap-3 rounded-full border-[3px] border-ink bg-ink px-[34px] py-4 text-[18px] font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-40">
+              Start <span>→</span>
+            </button>
+          </div>
+          <p className="mt-3 text-center text-[13px] font-semibold text-[#6a5e86]">No account. Saved on this device only.</p>
+        </div>
+      </Shell>
+    );
+  }
+
+  /* ---------------- HOME ---------------- */
+  const resetProfile = () => { localStorage.removeItem(LS_KEY); setProfile(null); };
+
+  const items: AnyItem[] = (() => {
+    let arr = [...(data[sec] as AnyItem[])];
+    if (feed === "foryou") arr = arr.filter((i) => isForYou(i as { interest?: string; type?: string }, profile));
+    arr.sort((a, b) =>
+      feed === "foryou"
+        ? personalScore(b as { opportunity_score: number }, profile) - personalScore(a as { opportunity_score: number }, profile)
+        : (b as { opportunity_score: number }).opportunity_score - (a as { opportunity_score: number }).opportunity_score);
+    return arr;
+  })();
+
+  const SEC_TITLE: Record<Sec, string> = {
+    people: "People to meet", opportunities: "Opportunities & events", communities: "Communities forming",
+  };
+
+  const addCreated = (keyList: Sec, item: AnyItem) => {
+    (data[keyList] as AnyItem[]).unshift(item);
+    const saved = JSON.parse(localStorage.getItem(CREATE_KEY) || '{"people":[],"opportunities":[],"communities":[]}');
+    saved[keyList].unshift(item);
+    localStorage.setItem(CREATE_KEY, JSON.stringify(saved));
+    setData({ ...data });
+    setSec(keyList); setFeed("popular"); setCreating(false);
+  };
+
+  return (
+    <Shell nav={
+      <nav className="flex items-center gap-3">
+        <button onClick={resetProfile} className="pill">Edit interests</button>
+        <a href="/models" className="pill">For creators</a>
+        <button onClick={() => setCreating(true)} className="pill solid">+ Create</button>
+      </nav>
+    }>
+      <div className="mb-5 mt-1 flex items-center gap-4">
+        <div className="flex size-[58px] items-center justify-center rounded-full border-[3px] border-ink bg-[linear-gradient(135deg,#9b5df0,#2f6df0)] text-2xl font-black text-white">
+          {(profile.name || "L").trim()[0].toUpperCase()}
+        </div>
+        <div>
+          <small className="font-bold text-[#4a3f63]">Welcome back,</small>
+          <h1 className="text-[30px] font-black leading-none tracking-tight">{profile.name}</h1>
+        </div>
+      </div>
+
+      <div className="mb-2.5 mt-1.5 flex flex-wrap gap-2.5">
+        {(["foryou", "popular"] as Feed[]).map((f) => (
+          <button key={f} onClick={() => setFeed(f)}
+            className={`rounded-full border-[2.5px] border-ink px-[22px] py-2.5 font-extrabold ${feed === f ? "bg-ink text-white" : "bg-cream"}`}>
+            {f === "foryou" ? "For you" : "Most popular"}
+          </button>
+        ))}
+      </div>
+
+      <div className="mb-1.5 mt-[18px] flex flex-wrap gap-2.5">
+        {(["people", "opportunities", "communities"] as Sec[]).map((s) => (
+          <button key={s} onClick={() => setSec(s)}
+            className={`rounded-full border-[2.5px] border-ink px-5 py-2.5 text-sm font-extrabold ${sec === s ? "bg-accent2 text-white" : "bg-transparent"}`}>
+            {s[0].toUpperCase() + s.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      <section className="my-[30px]">
+        <div className="mb-4 flex items-baseline justify-between">
+          <h3 className="text-[30px] font-black tracking-tight">{SEC_TITLE[sec]}</h3>
+          <div className="text-sm font-bold text-[#3a3150]">
+            {items.length} · {feed === "foryou" ? "matched to your interests" : "by opportunity score"}
+          </div>
+        </div>
+        {items.length ? (
+          <div className="grid gap-[22px] [grid-template-columns:repeat(auto-fill,minmax(270px,1fr))]">
+            {items.map((it, i) => (
+              <Card key={(it as { id: string }).id} item={it} i={i} sec={sec} profile={profile}
+                onClick={() => setDetail({ sec, id: (it as { id: string }).id })} />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-[18px] border-[3px] border-dashed border-ink bg-white/35 p-[30px] text-center font-bold">
+            Nothing matches your interests here yet. Try “Most popular”, or add the first one.
+          </div>
+        )}
+      </section>
+
+      {detail && <DetailModal data={data} target={detail} onClose={() => setDetail(null)} />}
+      {creating && <CreateModal data={data} allInterests={allInterests}
+        schoolNames={schoolNames} onClose={() => setCreating(false)} onAdd={addCreated} />}
+    </Shell>
   );
 }
 
-function MetricsBlock({ model }: { model: PerModel }) {
+/* ================= small components ================= */
+function Shell({ children, nav }: { children: React.ReactNode; nav?: React.ReactNode }) {
   return (
-    <p className="text-sm text-ink/70">
-      <span className="font-semibold text-ink">{model.name}</span>
-      {" · "}
-      {Object.entries(model.metrics)
-        .map(([k, v]) => `${k} ${v.toFixed(3)}`)
-        .join(" · ")}
-    </p>
+    <div className="mx-auto max-w-[1180px] px-7 pb-24">
+      <header className="flex items-center justify-between pb-[18px] pt-[26px]">
+        <div className="text-[46px] font-black tracking-[-2px]">L<span className="text-[#8a7bd8]">O</span>KA</div>
+        {nav}
+      </header>
+      <hr className="mb-[26px] mt-1 border-0 border-t-[3px] border-ink" />
+      {children}
+      <footer className="mt-16 text-center text-[13px] font-semibold text-[#3a3150]">
+        LOKA · a bridge between Boston&apos;s campuses · synthetic demo data · events ranked by the LOKA ML model
+      </footer>
+    </div>
+  );
+}
+function StepLabel({ children }: { children: React.ReactNode }) {
+  return <div className="mb-3 mt-[22px] text-[14px] font-extrabold uppercase tracking-wide text-[#6a5e86]">{children}</div>;
+}
+
+function ScorePill({ item, profile }: { item: AnyItem; profile: Profile | null }) {
+  const mine = isForYou(item as { interest?: string; type?: string }, profile);
+  const v = Math.round(mine ? personalScore(item as { opportunity_score: number }, profile) : (item as { opportunity_score: number }).opportunity_score);
+  return (
+    <span className={`rounded-full border-2 border-ink px-3 py-1.5 text-[12.5px] font-bold text-white ${mine ? "bg-[#1dbf73]" : "bg-accent2"}`}>
+      {mine ? "for you" : "fit"} {v}
+    </span>
   );
 }
 
-function RankTable({
-  title,
-  rows,
-  showTier,
-  scoreKey,
-}: {
-  title: string;
-  rows: RankRow[];
-  showTier?: boolean;
-  scoreKey?: string;
-}) {
+function Card({ item, i, sec, profile, onClick }: { item: AnyItem; i: number; sec: Sec; profile: Profile | null; onClick: () => void }) {
+  const [a, b] = pal(sec === "opportunities" ? i + 2 : sec === "communities" ? i + 4 : i);
   return (
-    <div>
-      <h3 className="mb-3 font-[family-name:var(--font-display)] text-xl">
-        {title}
-      </h3>
-      <div className="overflow-x-auto border border-line">
-        <table className="w-full min-w-[640px] text-left text-sm">
-          <thead className="bg-leaf-deep text-sand">
-            <tr>
-              <th className="px-3 py-2 font-medium">#</th>
-              <th className="px-3 py-2 font-medium">ID</th>
-              <th className="px-3 py-2 font-medium">Campus</th>
-              <th className="px-3 py-2 font-medium">Event</th>
-              <th className="px-3 py-2 font-medium">Free</th>
-              {showTier && <th className="px-3 py-2 font-medium">Tier</th>}
-              <th className="px-3 py-2 font-medium">Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => {
-              const score =
-                showTier && r.ensemble_score != null
-                  ? Number(r.ensemble_score)
-                  : scoreKey && r[scoreKey] != null
-                    ? Number(r[scoreKey])
-                    : null;
-              return (
-                <tr key={`${r.rank}-${r.record_id}`} className="odd:bg-fog/40">
-                  <td className="px-3 py-2">{r.rank}</td>
-                  <td className="px-3 py-2 font-mono text-xs">{r.record_id}</td>
-                  <td className="px-3 py-2">{r.campus_group}</td>
-                  <td className="px-3 py-2">
-                    {r.event_type}
-                    <span className="block text-xs text-ink/45">
-                      {r.event_neighborhood}
-                    </span>
-                  </td>
-                  <td className="px-3 py-2">{r.is_free ? "yes" : "no"}</td>
-                  {showTier && (
-                    <td className="px-3 py-2 text-xs">{r.tier}</td>
-                  )}
-                  <td className="px-3 py-2 tabular-nums">
-                    {score != null ? score.toFixed(3) : "—"}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+    <div onClick={onClick}
+      className="flex cursor-pointer flex-col overflow-hidden rounded-[22px] border-[3px] border-ink bg-card shadow-[6px_7px_0_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5">
+      <div className="flex h-[150px] items-start justify-between p-3.5" style={{ background: `linear-gradient(135deg,${a},${b})` }}>
+        <span className="rounded-full border-2 border-ink bg-cream px-3 py-1.5 text-[12.5px] font-bold">
+          {sec === "people" ? (item as Person).role : sec === "opportunities" ? (item as Opportunity).date : `${(item as Community).members} members`}
+        </span>
+        <ScorePill item={item} profile={profile} />
+      </div>
+      <div className="flex-1 bg-cream p-4 pb-5">
+        {sec === "people" && <PersonBody p={item as Person} />}
+        {sec === "opportunities" && <OppBody o={item as Opportunity} />}
+        {sec === "communities" && <CommBody c={item as Community} />}
       </div>
     </div>
+  );
+}
+function Tag({ children }: { children: React.ReactNode }) {
+  return <span className="mr-1.5 mt-2.5 inline-block rounded-full border-2 border-ink bg-[#e4dcff] px-2.5 py-0.5 text-xs font-bold">{children}</span>;
+}
+function PersonBody({ p }: { p: Person }) {
+  return (<>
+    <div className="mb-2 text-[18px] font-extrabold leading-tight">{p.name} · {p.campus}</div>
+    <div className="text-sm leading-relaxed text-[#2c2436]"><b className="font-extrabold">Wants:</b> {p.looking_for}<br />{p.tagline}</div>
+    <Tag>{icon(p.interest)} {p.interest}</Tag><Tag>{p.neighborhood}</Tag>
+    <div className="mt-2.5 text-[13px] italic text-[#4a3f63]">“{p.match_reason}”</div>
+  </>);
+}
+function OppBody({ o }: { o: Opportunity }) {
+  return (<>
+    <div className="mb-2 text-[18px] font-extrabold leading-tight">{o.title}</div>
+    <div className="text-sm leading-relaxed text-[#2c2436]"><b className="font-extrabold">by {o.host}</b><br />{o.neighborhood}, Boston<br />{o.cost}</div>
+    <Tag>{icon(o.interest)} {o.type}</Tag>
+  </>);
+}
+function CommBody({ c }: { c: Community }) {
+  return (<>
+    <div className="mb-2 text-[18px] font-extrabold leading-tight">{c.name}</div>
+    <div className="text-sm leading-relaxed text-[#2c2436]"><b className="font-extrabold">Across:</b> {c.campuses.join(" · ")}<br />{c.neighborhood}</div>
+    <Tag>{icon(c.interest)} {c.interest}</Tag>
+  </>);
+}
+
+function Overlay({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
+  return (
+    <div onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(10,6,20,0.55)] p-6">
+      <div onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-[460px] overflow-hidden rounded-[26px] border-[3px] border-ink bg-white shadow-[10px_12px_0_rgba(0,0,0,0.35)]">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function DetailModal({ data, target, onClose }: { data: Seed; target: { sec: Sec; id: string }; onClose: () => void }) {
+  const it = (data[target.sec] as AnyItem[]).find((x) => String((x as { id: string }).id) === String(target.id));
+  if (!it) return null;
+  const [a, b] = pal(0);
+  let title = "", meta: React.ReactNode = null, link = { href: "#", label: "" }, primary = "Open";
+  if (target.sec === "people") {
+    const p = it as Person; title = `${p.name} · ${p.campus}`; primary = "Connect"; link = linkForPerson(p);
+    meta = <><b>Role:</b> {p.role}<br /><b>Looking for:</b> {p.looking_for}<br />{p.tagline}<br /><b>Interest:</b> {p.interest} · <b>Area:</b> {p.neighborhood}<br /><i>“{p.match_reason}”</i></>;
+  } else if (target.sec === "opportunities") {
+    const o = it as Opportunity; title = o.title; primary = "Join / RSVP"; link = linkForOpp(o);
+    meta = <><b>Host:</b> {o.host}<br /><b>When:</b> {o.date}<br /><b>Where:</b> {o.neighborhood}, Boston<br /><b>Cost:</b> {o.cost}<br /><b>Type:</b> {o.type}</>;
+  } else {
+    const c = it as Community; title = c.name; primary = "Join now"; link = linkForComm(c);
+    meta = <><b>Interest:</b> {c.interest}<br /><b>Members:</b> {c.members}<br /><b>Across:</b> {c.campuses.join(" · ")}<br /><b>Area:</b> {c.neighborhood}</>;
+  }
+  return (
+    <Overlay onClose={onClose}>
+      <div className="h-[120px]" style={{ background: `linear-gradient(135deg,${a},${b})` }} />
+      <div className="p-6">
+        <h3 className="mb-1.5 text-[26px] font-black tracking-tight">{title}</h3>
+        <div className="mb-3.5 font-semibold leading-relaxed text-[#3a3150]">{meta}</div>
+        <div className="mt-[18px] flex gap-3">
+          <a href={link.href} target="_blank" rel="noopener noreferrer"
+            className="flex-1 rounded-full border-[3px] border-ink bg-ink px-3 py-3.5 text-center text-[16px] font-extrabold text-white">{primary} →</a>
+          <button onClick={onClose} className="flex-1 rounded-full border-[3px] border-ink bg-white px-3 py-3.5 text-[16px] font-extrabold">Close</button>
+        </div>
+        <div className="mt-2.5 text-xs font-semibold text-[#8a7fa3]">{link.label}. (Synthetic demo data — links open a real search until real profiles are added.)</div>
+      </div>
+    </Overlay>
+  );
+}
+
+function CreateModal({ data, allInterests, schoolNames, onClose, onAdd }: {
+  data: Seed; allInterests: string[]; schoolNames: string[];
+  onClose: () => void; onAdd: (sec: Sec, item: AnyItem) => void;
+}) {
+  const [type, setType] = useState<"opportunity" | "person" | "community">("opportunity");
+  const [f, setF] = useState<Record<string, string>>({});
+  const set = (k: string, v: string) => setF((cur) => ({ ...cur, [k]: v }));
+  const hoods = Object.keys(data.neighborhood_scores || {}).sort();
+  const score = (h: string) => data.neighborhood_scores[h] || 60;
+
+  const submit = () => {
+    const nm = (f.name || "").trim();
+    if (!nm) { alert("Give it a name/title first."); return; }
+    const id = "u" + Date.now();
+    if (type === "person") {
+      onAdd("people", { id, name: nm, campus: f.campus || "", interest: f.interest || allInterests[0], role: "member",
+        tagline: f.tagline || "", looking_for: f.looking || "to connect", neighborhood: f.hood || hoods[0],
+        match_reason: "You just added this.", opportunity_score: score(f.hood), url: f.url || "" } as Person);
+    } else if (type === "community") {
+      onAdd("communities", { id, name: nm, interest: f.interest || allInterests[0],
+        campuses: (f.campuses || "").split(",").map((s) => s.trim()).filter(Boolean), members: 1,
+        neighborhood: f.hood || hoods[0], opportunity_score: score(f.hood), url: f.url || "" } as Community);
+    } else {
+      onAdd("opportunities", { id, title: nm, host: f.host || "You", interest: f.interest || allInterests[0],
+        type: f.interest || allInterests[0], date: f.date || "TBA", cost: f.cost || "Free",
+        neighborhood: f.hood || hoods[0], opportunity_score: score(f.hood), url: f.url || "" } as Opportunity);
+    }
+  };
+
+  const Field = ({ label, k, ph }: { label: string; k: string; ph?: string }) => (
+    <div className="mt-3"><label className="mb-1.5 block text-[13px] font-extrabold text-[#3a3150]">{label}</label>
+      <input value={f[k] || ""} onChange={(e) => set(k, e.target.value)} placeholder={ph}
+        className="w-full rounded-xl border-[2.5px] border-ink bg-[#f4f1fa] px-3.5 py-2.5 font-semibold outline-none" /></div>
+  );
+  const Pick = ({ label, k, opts }: { label: string; k: string; opts: string[] }) => (
+    <div className="mt-3"><label className="mb-1.5 block text-[13px] font-extrabold text-[#3a3150]">{label}</label>
+      <select value={f[k] || ""} onChange={(e) => set(k, e.target.value)}
+        className="w-full rounded-xl border-[2.5px] border-ink bg-[#f4f1fa] px-3.5 py-2.5 font-semibold outline-none">
+        <option value="">Choose…</option>{opts.map((o) => <option key={o} value={o}>{o}</option>)}
+      </select></div>
+  );
+
+  return (
+    <Overlay onClose={onClose}>
+      <div className="p-6">
+        <h3 className="mb-3 text-[26px] font-black tracking-tight">+ Create on LOKA</h3>
+        <div className="grid grid-cols-3 gap-2.5">
+          {([["opportunity", "📅", "Opportunity"], ["person", "🙋", "My profile"], ["community", "🌐", "Community"]] as const).map(([t, ic, lbl]) => (
+            <button key={t} onClick={() => setType(t)}
+              className={`rounded-2xl border-[2.5px] border-ink px-2 py-4 text-sm font-extrabold ${type === t ? "bg-pick shadow-[3px_4px_0_rgba(0,0,0,0.2)]" : "bg-[#f4f1fa]"}`}>
+              <span className="mb-1.5 block text-2xl">{ic}</span>{lbl}
+            </button>
+          ))}
+        </div>
+
+        {type === "person" && <>
+          <Field label="Your name" k="name" ph="e.g. Alex" />
+          <Pick label="School" k="campus" opts={schoolNames} />
+          <Pick label="Interest" k="interest" opts={allInterests} />
+          <Field label="I'm looking for" k="looking" ph="e.g. a co-founder, a mentor" />
+          <Field label="One line about you" k="tagline" ph="e.g. Building a campus art collective" />
+          <Pick label="Neighborhood" k="hood" opts={hoods} />
+          <Field label="Link (optional)" k="url" ph="https://…" />
+        </>}
+        {type === "community" && <>
+          <Field label="Community name" k="name" ph="e.g. Boston Creatives Collective" />
+          <Pick label="Interest" k="interest" opts={allInterests} />
+          <Field label="Campuses (comma-separated)" k="campuses" ph="e.g. BU, Northeastern, Emerson" />
+          <Pick label="Neighborhood" k="hood" opts={hoods} />
+          <Field label="Link (optional)" k="url" ph="https://…" />
+        </>}
+        {type === "opportunity" && <>
+          <Field label="Title" k="name" ph="e.g. Intro to Startups Workshop" />
+          <Field label="Host (org / business)" k="host" ph="e.g. CIC Boston" />
+          <Pick label="Interest / type" k="interest" opts={allInterests} />
+          <Field label="Date" k="date" ph="e.g. Nov 12" />
+          <Field label="Cost" k="cost" ph="e.g. Free" />
+          <Pick label="Neighborhood" k="hood" opts={hoods} />
+          <Field label="Link (optional)" k="url" ph="https://eventbrite…" />
+        </>}
+
+        <div className="mt-[18px] flex gap-3">
+          <button onClick={submit} className="flex-1 rounded-full border-[3px] border-ink bg-ink px-3 py-3.5 text-[16px] font-extrabold text-white">Post it →</button>
+          <button onClick={onClose} className="flex-1 rounded-full border-[3px] border-ink bg-white px-3 py-3.5 text-[16px] font-extrabold">Cancel</button>
+        </div>
+      </div>
+    </Overlay>
   );
 }
