@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Fraunces, Nunito, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
 const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
+});
+
+const brand = Nunito({
+  variable: "--font-brand",
+  subsets: ["latin"],
+  weight: ["700", "800"],
 });
 
 const body = Source_Sans_3({
@@ -25,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable} antialiased font-sans`}>
+      <body
+        className={`${display.variable} ${brand.variable} ${body.variable} antialiased font-sans`}
+      >
         {children}
       </body>
     </html>

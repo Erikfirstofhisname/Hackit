@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { LokaWordmark } from "@/components/LokaWordmark";
 
 type ModelInfo = {
   id: string;
@@ -208,8 +209,8 @@ export default function Home() {
         <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-leaf uppercase">
           Boston · creative · civic
         </p>
-        <h1 className="font-[family-name:var(--font-display)] text-6xl leading-[0.95] tracking-tight text-ink sm:text-7xl">
-          Loka
+        <h1 className="text-7xl leading-none sm:text-8xl">
+          <LokaWordmark />
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
           Eight model boxes — open each popup to pick an option, then train and
